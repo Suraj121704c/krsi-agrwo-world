@@ -255,50 +255,91 @@ export default function FeaturesSection() {
               AI &amp; IoT monitor commodity quality and storage conditions in real time.
             </p>
 
-            {/* Network graph illustration */}
+            {/* Arc illustration — Landeros-style dome */}
             <div
               style={{
                 flex: 1,
                 background: 'rgba(255,255,255,0.65)',
-                borderRadius: '12px 12px 12px 12px',
+                borderRadius: '12px 12px 0 0',
                 position: 'relative',
-                minHeight: 220,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                height: 260,
                 overflow: 'hidden',
               }}
             >
-              <svg width="320" height="200" viewBox="0 0 320 200" fill="none" style={{ position: 'absolute' }}>
-                {/* Connection lines */}
-                <line x1="90" y1="100" x2="160" y2="60" stroke="rgba(101,148,12,0.2)" strokeWidth="1.5" />
-                <line x1="160" y1="60" x2="240" y2="90" stroke="rgba(101,148,12,0.2)" strokeWidth="1.5" />
-                <line x1="90" y1="100" x2="160" y2="140" stroke="rgba(101,148,12,0.2)" strokeWidth="1.5" />
-                <line x1="160" y1="140" x2="240" y2="90" stroke="rgba(101,148,12,0.2)" strokeWidth="1.5" />
-                <line x1="160" y1="60" x2="160" y2="140" stroke="rgba(101,148,12,0.15)" strokeWidth="1" />
-                <line x1="90" y1="100" x2="240" y2="90" stroke="rgba(101,148,12,0.1)" strokeWidth="1" strokeDasharray="4 4" />
-                {/* Nodes */}
-                <circle cx="90" cy="100" r="22" fill="rgba(200,212,195,0.5)" stroke="rgba(97,175,28,0.3)" strokeWidth="1.5" />
-                <circle cx="90" cy="100" r="13" fill="rgba(101,148,12,0.15)" />
-                <circle cx="160" cy="60" r="28" fill="rgba(200,212,195,0.55)" stroke="rgba(97,175,28,0.35)" strokeWidth="1.5" />
-                <circle cx="160" cy="60" r="18" fill="rgba(101,148,12,0.18)" />
-                <circle cx="240" cy="90" r="32" fill="rgba(200,212,195,0.6)" stroke="rgba(97,175,28,0.4)" strokeWidth="1.5" />
-                <circle cx="240" cy="90" r="20" fill="rgba(101,148,12,0.2)" />
-                <circle cx="160" cy="140" r="20" fill="rgba(200,212,195,0.45)" stroke="rgba(97,175,28,0.25)" strokeWidth="1.5" />
-                <circle cx="160" cy="140" r="12" fill="rgba(101,148,12,0.12)" />
-              </svg>
+              {/* ── Two concentric shapes: outer ring + inner solid circle ── */}
+              <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translate(-50%, 50%)', width: 400, height: 400, borderRadius: '50%', border: '60px solid rgba(101,148,12,0.07)', pointerEvents: 'none' }} />
+              <div style={{ position: 'absolute', bottom: 0, left: '50%', transform: 'translate(-50%, 50%)', width: 220, height: 220, borderRadius: '50%', background: 'rgba(101,148,12,0.09)', pointerEvents: 'none' }} />
 
+              {/* ── Orbit ring: rotates around arc center (container bottom-center) ── */}
+              {/* Ring is 380×380, centered at bottom edge via bottom:-190 */}
+              {/* Lines + circles are children so they all orbit together */}
+              <div
+                className="animate-orbit"
+                style={{
+                  position: 'absolute',
+                  width: 380,
+                  height: 380,
+                  bottom: -190,
+                  left: 'calc(50% - 190px)',
+                  transformOrigin: '190px 190px',
+                }}
+              >
+                {/* Connection lines from ring center (190,190) to each node center */}
+                <svg
+                  viewBox="0 0 380 380"
+                  fill="none"
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', overflow: 'visible' }}
+                >
+                  {/* 165°: center at (6.5, 140.8) */}
+                  <line x1="190" y1="190" x2="6.5"   y2="140.8" stroke="rgba(101,148,12,0.22)" strokeWidth="1" />
+                  {/* 110°: center at (125, 11.5)  */}
+                  <line x1="190" y1="190" x2="125"   y2="11.5"  stroke="rgba(101,148,12,0.22)" strokeWidth="1" />
+                  {/* 70°: center at (255, 11.5) */}
+                  <line x1="190" y1="190" x2="255"   y2="11.5"  stroke="rgba(101,148,12,0.22)" strokeWidth="1" />
+                  {/* 15°: center at (373.5, 140.8) */}
+                  <line x1="190" y1="190" x2="373.5" y2="140.8" stroke="rgba(101,148,12,0.22)" strokeWidth="1" />
+                </svg>
+
+                {/* Node circles — positioned at arc radius 190, angles 165°/110°/70°/15° */}
+                {/* Formula: cx=190+190·cos(θ), cy=190−190·sin(θ); div top=cy−35, left=cx−35 */}
+                {[
+                  { top: 106,  left: -29  },   /* 165°: cx=6.5   cy=140.8 */
+                  { top: -24,  left: 90   },   /* 110°: cx=125   cy=11.5  */
+                  { top: -24,  left: 220  },   /* 70°:  cx=255   cy=11.5  */
+                  { top: 106,  left: 338  },   /* 15°:  cx=373.5 cy=140.8 */
+                ].map((pos, i) => (
+                  <div
+                    key={i}
+                    style={{
+                      position: 'absolute',
+                      top: pos.top,
+                      left: pos.left,
+                      width: 70,
+                      height: 70,
+                      borderRadius: '50%',
+                      background: 'rgba(185,225,155,0.55)',
+                      border: '1px solid rgba(101,148,12,0.15)',
+                    }}
+                  />
+                ))}
+              </div>
+
+              {/* ── Bottom badge ── */}
               <div
                 style={{
                   position: 'absolute',
                   bottom: 20,
-                  right: 20,
-                  borderRadius: 100,
-                  padding: '8px 18px',
-                  background: 'linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)',
-                  fontSize: 12,
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  borderRadius: 12,
+                  padding: '12px 30px',
+                  background: 'linear-gradient(-43deg, rgb(60,120,20) 0%, rgb(97,148,12) 100%)',
+                  fontSize: 14,
                   fontWeight: 600,
                   color: '#fff',
+                  whiteSpace: 'nowrap' as const,
+                  boxShadow: '0 4px 20px rgba(60,100,20,0.35)',
+                  letterSpacing: '0.01em',
                 }}
               >
                 Warehouse Monitoring
