@@ -143,7 +143,7 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: '5fr 6fr', gap: 16, marginBottom: 16 }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16, marginBottom: 16 }}>
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
