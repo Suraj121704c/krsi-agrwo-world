@@ -55,3 +55,34 @@ html, body {
 
 .animate-float { animation: float 5s ease-in-out infinite; }
 .animate-blink { animation: blink 1.8s ease-in-out infinite; }
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.animate-marquee {
+  animation: marquee 22s linear infinite;
+  display: flex;
+  flex-wrap: nowrap;
+  width: max-content;
+  will-change: transform;
+}
+
+.marquee-outer {
+  overflow: hidden;
+  width: 100%;
+}
+
+@keyframes scrollUp {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-50%); }
+}
+.animate-scroll-up {
+  animation: scrollUp 10s linear infinite;
+  will-change: transform;
+}
+
+.code-scroll-outer {
+  overflow: hidden;
+  position: relative;
+}

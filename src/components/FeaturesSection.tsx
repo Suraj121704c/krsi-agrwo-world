@@ -5,11 +5,53 @@ import { motion } from 'framer-motion';
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const TICKER_ITEMS = [
-  { icon: '⬡', label: 'Scalable Solutions' },
-  { icon: '◎', label: 'Real-Time Insights' },
-  { icon: '✦', label: 'Virtual Assistance' },
-  { icon: '⊕', label: 'Cost Effective' },
-  { icon: '➶', label: 'Faster Innovation' },
+  {
+    label: 'Scalable Solutions',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="7" width="5" height="5" rx="1.5" stroke="#273c1d" strokeWidth="1.3" />
+        <rect x="8" y="4" width="5" height="8" rx="1.5" stroke="#273c1d" strokeWidth="1.3" />
+        <path d="M3.5 7V4M10.5 4V2" stroke="#273c1d" strokeWidth="1.3" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Real-Time Insights',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6.5" stroke="#273c1d" strokeWidth="1.3" />
+        <path d="M8 8V4.5M8 8l3 2" stroke="#273c1d" strokeWidth="1.3" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Virtual Assistance',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <rect x="1" y="3" width="10" height="7" rx="2" stroke="#273c1d" strokeWidth="1.3" />
+        <path d="M4 14l2-4M8 14l-2-4" stroke="#273c1d" strokeWidth="1.3" strokeLinecap="round" />
+        <circle cx="13" cy="5" r="2.5" stroke="#273c1d" strokeWidth="1.3" />
+        <path d="M13 4.5v1M13 6.5v.2" stroke="#273c1d" strokeWidth="1.2" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Cost Effective',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <circle cx="8" cy="8" r="6.5" stroke="#273c1d" strokeWidth="1.3" />
+        <path d="M8 5v1m0 4v1M6 9.5h2a1.5 1.5 0 000-3H8A1.5 1.5 0 018 4h1.5" stroke="#273c1d" strokeWidth="1.3" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    label: 'Faster Innovation',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+        <path d="M8 2l1.5 4h4l-3 2.5 1 4L8 10l-3.5 2.5 1-4L2.5 6h4L8 2z" stroke="#273c1d" strokeWidth="1.3" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
 
 const cardStyle: React.CSSProperties = {
@@ -43,7 +85,6 @@ export default function FeaturesSection() {
       />
 
       <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative', zIndex: 1 }}>
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -102,9 +143,7 @@ export default function FeaturesSection() {
           </p>
         </motion.div>
 
-        {/* Row 1: Large left card + Right stacked cards */}
         <div style={{ display: 'grid', gridTemplateColumns: '5fr 6fr', gap: 16, marginBottom: 16 }}>
-          {/* AI Risk Intelligence — large left card */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -221,7 +260,7 @@ export default function FeaturesSection() {
               style={{
                 flex: 1,
                 background: 'rgba(255,255,255,0.65)',
-                borderRadius: '12px 12px 0 0',
+                borderRadius: '12px 12px 12px 12px',
                 position: 'relative',
                 minHeight: 220,
                 display: 'flex',
@@ -249,7 +288,6 @@ export default function FeaturesSection() {
                 <circle cx="160" cy="140" r="12" fill="rgba(101,148,12,0.12)" />
               </svg>
 
-              {/* Warehouse Monitoring pill */}
               <div
                 style={{
                   position: 'absolute',
@@ -277,7 +315,7 @@ export default function FeaturesSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: '-40px' }}
             transition={{ duration: 0.6, ease: EASE }}
-            style={{ ...cardStyle, padding: '28px 28px 0', display: 'flex', flexDirection: 'column' }}
+            style={{ ...cardStyle, background: '#edf7e4', padding: '28px 28px 0', display: 'flex', flexDirection: 'column' }}
           >
             <p style={{ fontSize: 18, fontFamily: "'Satoshi', sans-serif", fontWeight: 700, color: '#1c1629', margin: '0 0 8px' }}>
               Tokenized Agricultural Assets
@@ -286,46 +324,83 @@ export default function FeaturesSection() {
               Turn commodities into secure, tradable digital assets.
             </p>
 
-            {/* Code editor mockup */}
             <div
               style={{
-                flex: 1,
-                background: '#1e1e2e',
-                borderRadius: '10px 10px 0 0',
-                padding: '14px 18px',
-                minHeight: 200,
+                background: '#fff',
+                borderRadius: '12px 12px 12px 12px',
+                border: '1px solid rgba(0,0,0,0.07)',
+                borderBottom: 'none',
+                overflow: 'hidden',
                 fontFamily: 'monospace',
                 fontSize: 11,
-                overflow: 'hidden',
+                position: 'relative' as const,
+                height: 240,
               }}
             >
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 14, color: 'rgba(255,255,255,0.4)', fontSize: 10 }}>
-                <span>Name: <span style={{ color: 'rgba(255,255,255,0.7)' }}>commodity_token.py</span></span>
-                <div style={{ display: 'flex', gap: 6 }}>
-                  <span style={{ cursor: 'pointer' }}>+</span>
-                  <span style={{ cursor: 'pointer' }}>×</span>
+              {/* Header */}
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  padding: '10px 16px',
+                  borderBottom: '1px solid rgba(0,0,0,0.06)',
+                  background: '#fafafa',
+                }}
+              >
+                <span style={{ fontSize: 11, color: 'rgba(39,60,29,0.5)' }}>
+                  Name : <span style={{ color: '#273c1d', fontWeight: 500 }}>AI_development.py</span>
+                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <circle cx="6" cy="6" r="4.5" stroke="rgba(39,60,29,0.3)" strokeWidth="1.2" />
+                    <path d="M9.5 9.5l2.5 2.5" stroke="rgba(39,60,29,0.3)" strokeWidth="1.2" strokeLinecap="round" />
+                  </svg>
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: '#65940c' }} />
+                  <div style={{ width: 6, height: 6, borderRadius: '50%', background: 'rgba(39,60,29,0.2)' }} />
                 </div>
               </div>
-              {[
-                { num: 1, text: '' },
-                { num: 2, text: <><span style={{ color: '#c792ea' }}>def</span> <span style={{ color: '#82aaff' }}>__init__</span><span style={{ color: '#89ddff' }}>(</span><span style={{ color: '#f78c6c' }}>self</span>, commodity_id<span style={{ color: '#89ddff' }}>):</span></> },
-                { num: 3, text: <><span style={{ color: '#f78c6c' }}>    self</span>.commodity_id <span style={{ color: '#89ddff' }}>=</span> commodity_id</> },
-                { num: 4, text: <><span style={{ color: '#f78c6c' }}>    self</span>.token_status <span style={{ color: '#89ddff' }}>=</span> <span style={{ color: '#c3e88d' }}>"pending"</span></> },
-                { num: 5, text: '' },
-                { num: 6, text: <><span style={{ color: '#c792ea' }}>def</span> <span style={{ color: '#82aaff' }}>tokenize</span><span style={{ color: '#89ddff' }}>(</span><span style={{ color: '#f78c6c' }}>self</span>, weight_kg<span style={{ color: '#89ddff' }}>):</span></> },
-                { num: 7, text: <><span style={{ color: '#89ddff' }}>    if</span> weight_kg <span style={{ color: '#89ddff' }}>{'>'}</span> <span style={{ color: '#f78c6c' }}>0</span>:</> },
-                { num: 8, text: <><span style={{ color: '#f78c6c' }}>        self</span>.token_status <span style={{ color: '#89ddff' }}>=</span> <span style={{ color: '#c3e88d' }}>"active"</span></> },
-                { num: 9, text: <><span style={{ color: '#89ddff' }}>        return</span> <span style={{ color: '#c3e88d' }}>"Token minted successfully"</span></> },
-              ].map(({ num, text }) => (
-                <div key={num} style={{ display: 'flex', gap: 16, marginBottom: 3 }}>
-                  <span style={{ color: 'rgba(255,255,255,0.2)', minWidth: 12, textAlign: 'right', userSelect: 'none' }}>{num}</span>
-                  <span style={{ color: 'rgba(255,255,255,0.75)' }}>{text}</span>
+              {/* Scrolling code — fixed viewport, lines loop upward */}
+              <div className="code-scroll-outer" style={{ height: 160 }}>
+                <div className="animate-scroll-up" style={{ paddingTop: 6 }}>
+                  {[...[
+                    { num: 1,  text: 'class AIAgent:' },
+                    { num: 2,  text: '    def __init__(self, limit):' },
+                    { num: 3,  text: '        self.limit = limit' },
+                    { num: 4,  text: '        self.mode = "idle"' },
+                    { num: 5,  text: '' },
+                    { num: 6,  text: '    def evaluate(self, value):' },
+                    { num: 7,  text: '        if value > self.limit:' },
+                    { num: 8,  text: '            self.mode = "active"' },
+                    { num: 9,  text: '            return True' },
+                    { num: 10, text: '        return False' },
+                    { num: 11, text: '' },
+                    { num: 12, text: '    def reset(self):' },
+                    { num: 13, text: '        self.mode = "idle"' },
+                  ], ...[
+                    { num: 1,  text: 'class AIAgent:' },
+                    { num: 2,  text: '    def __init__(self, limit):' },
+                    { num: 3,  text: '        self.limit = limit' },
+                    { num: 4,  text: '        self.mode = "idle"' },
+                    { num: 5,  text: '' },
+                    { num: 6,  text: '    def evaluate(self, value):' },
+                    { num: 7,  text: '        if value > self.limit:' },
+                    { num: 8,  text: '            self.mode = "active"' },
+                    { num: 9,  text: '            return True' },
+                    { num: 10, text: '        return False' },
+                    { num: 11, text: '' },
+                    { num: 12, text: '    def reset(self):' },
+                    { num: 13, text: '        self.mode = "idle"' },
+                  ]].map(({ num, text }, i) => (
+                    <div key={i} style={{ display: 'flex', gap: 14, padding: '3px 14px' }}>
+                      <span style={{ color: 'rgba(39,60,29,0.2)', minWidth: 18, textAlign: 'right', userSelect: 'none' as const }}>{num}</span>
+                      <span style={{ color: 'rgba(39,60,29,0.65)', whiteSpace: 'pre' as const }}>{text}</span>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </motion.div>
-
-          {/* Chatbots & virtual assistants */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -438,37 +513,40 @@ export default function FeaturesSection() {
           </motion.div>
         </div>
 
-        {/* Ticker strip */}
+        {/* Ticker strip — auto-scrolling marquee */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.55, ease: EASE }}
-          style={{
-            ...cardStyle,
-            padding: '16px 32px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: 16,
-          }}
+          style={{ padding: '10px 0', background: 'transparent' }}
         >
-          {TICKER_ITEMS.map((item, i) => (
-            <div key={item.label} style={{ display: 'flex', alignItems: 'center', gap: 8, flex: 1, justifyContent: 'center', minWidth: 140 }}>
-              {i > 0 && (
-                <div style={{ position: 'absolute', marginLeft: -16, width: 1, height: 20, background: '#eef6ea' }} />
-              )}
-              <span style={{ color: '#65940c', fontSize: 14 }}>{item.icon}</span>
-              <span style={{ fontSize: 13, fontWeight: 600, color: '#273c1d' }}>
-                {item.label.split(' ').map((word, wi) => (
-                  <span key={wi}>
-                    {wi === 0 ? <span style={{ fontWeight: 700, color: '#1c1629' }}>{word}</span> : ` ${word}`}
+          <div className="marquee-outer">
+            <div className="animate-marquee" style={{ gap: 12, padding: '0 6px' }}>
+              {[...TICKER_ITEMS, ...TICKER_ITEMS].map((item, i) => (
+                <div
+                  key={i}
+                  style={{
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: 8,
+                    padding: '9px 20px',
+                    borderRadius: 100,
+                    background: '#f4fcf1',
+                    border: '1px solid rgba(101,148,12,0.12)',
+                    flexShrink: 0,
+                    marginRight: 12,
+                  }}
+                >
+                  {item.icon}
+                  <span style={{ fontSize: 13, fontWeight: 600, color: '#273c1d', whiteSpace: 'nowrap' }}>
+                    <span style={{ fontWeight: 700, color: '#1c1629' }}>{item.label.split(' ')[0]}</span>
+                    {' ' + item.label.split(' ').slice(1).join(' ')}
                   </span>
-                ))}
-              </span>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </motion.div>
       </div>
     </section>
