@@ -96,6 +96,24 @@ html, body {
   will-change: transform;
 }
 
+@keyframes orbit-sway {
+  0%, 100% { transform: rotate(-14deg); }
+  50%      { transform: rotate(14deg); }
+}
+.animate-orbit-sway {
+  animation: orbit-sway 6s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes node-bob {
+  0%, 100% { transform: scale(1); }
+  50%      { transform: scale(1.08); }
+}
+.animate-node-bob {
+  animation: node-bob 2.6s ease-in-out infinite;
+  will-change: transform;
+}
+
 @keyframes pulseRing {
   0%   { box-shadow: 0 0 0 0 rgba(101,148,12,0.25), 0 4px 16px rgba(101,148,12,0.08); }
   70%  { box-shadow: 0 0 0 8px rgba(101,148,12,0), 0 4px 16px rgba(101,148,12,0.08); }
