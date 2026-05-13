@@ -249,6 +249,8 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE }}
             style={{
               ...cardStyle,
+              background:
+                "linear-gradient(225deg, #e6f1d5 0%, #f6faec 50%, #f8fbf0 100%)",
               padding: "36px 32px",
               display: "flex",
               flexDirection: "column",
@@ -293,19 +295,19 @@ export default function FeaturesSection() {
                     <span
                       style={{
                         color: "#65940c",
-                        fontWeight: 700,
-                        fontSize: 16,
-                        lineHeight: 1.4,
+                        fontWeight: 400,
+                        fontSize: 18,
+                        lineHeight: 1.3,
                         flexShrink: 0,
                       }}
                     >
-                      ✕
+                      ✱
                     </span>
                     <span
                       style={{
                         fontSize: 14,
                         color: "#273c1d",
-                        fontWeight: 500,
+                        fontWeight: 600,
                         lineHeight: 1.5,
                       }}
                     >
@@ -390,43 +392,44 @@ export default function FeaturesSection() {
                 <div
                   key={card.title}
                   style={{
-                    background: "rgba(255,255,255,0.7)",
-                    borderRadius: 12,
-                    padding: "18px 16px",
-                    boxShadow: "inset 0 0 1px 1px rgba(255,255,255,0.9)",
+                    background: "#fff",
+                    borderRadius: 14,
+                    padding: "22px 22px 26px",
+                    border: "1px solid rgba(0,0,0,0.04)",
                   }}
                 >
                   <div
                     style={{
-                      width: 38,
-                      height: 38,
-                      borderRadius: 8,
-                      background:
-                        "linear-gradient(180deg, rgba(246,252,241,0.8) 0%, rgba(255,255,255,0.8) 100%)",
-                      boxShadow: "inset 0 0 1px 1px rgba(255,255,255,0.9)",
+                      width: 40,
+                      height: 40,
+                      borderRadius: 10,
+                      background: "#fff",
+                      boxShadow:
+                        "0 1px 2px rgba(16,24,40,0.06), 0 4px 10px rgba(16,24,40,0.05)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
-                      marginBottom: 12,
+                      marginBottom: 20,
                     }}
                   >
                     {card.icon}
                   </div>
                   <p
                     style={{
-                      fontSize: 14,
+                      fontSize: 20,
                       fontFamily: "'Satoshi', sans-serif",
-                      fontWeight: 700,
+                      fontWeight: 600,
                       color: "#1c1629",
-                      margin: "0 0 6px",
+                      margin: "0 0 10px",
+                      letterSpacing: "-0.3px",
                     }}
                   >
                     {card.title}
                   </p>
                   <p
                     style={{
-                      fontSize: 12,
-                      color: "rgba(39,60,29,0.6)",
+                      fontSize: 13,
+                      color: "rgba(39,60,29,0.55)",
                       margin: 0,
                       lineHeight: 1.55,
                     }}
@@ -581,7 +584,12 @@ export default function FeaturesSection() {
                     delay: 0,
                     icon: (
                       /* Thermometer — temperature monitoring */
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path
                           d="M10 13V5a2 2 0 1 1 4 0v8a4 4 0 1 1-4 0z"
                           stroke="#273c1d"
@@ -604,7 +612,12 @@ export default function FeaturesSection() {
                     delay: 0.65,
                     icon: (
                       /* Droplet — humidity / moisture */
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path
                           d="M12 3.5c2 3 6 7 6 10.5a6 6 0 1 1-12 0c0-3.5 4-7.5 6-10.5z"
                           stroke="#273c1d"
@@ -620,7 +633,12 @@ export default function FeaturesSection() {
                     delay: 1.3,
                     icon: (
                       /* Cube — inventory / storage */
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path
                           d="M21 16V8L12 4 3 8v8l9 4 9-4z"
                           stroke="#273c1d"
@@ -642,7 +660,12 @@ export default function FeaturesSection() {
                     delay: 1.95,
                     icon: (
                       /* Bell — real-time alerts */
-                      <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
+                      <svg
+                        width="28"
+                        height="28"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                      >
                         <path
                           d="M6 17h12M8 17v-6a4 4 0 1 1 8 0v6M10.5 20a1.5 1.5 0 0 0 3 0"
                           stroke="#273c1d"
@@ -758,7 +781,7 @@ export default function FeaturesSection() {
                 fontFamily: "monospace",
                 fontSize: 11,
                 position: "relative" as const,
-                height: 240,
+                height: 280,
               }}
             >
               {/* Header */}
@@ -882,7 +905,8 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
             style={{
               ...cardStyle,
-              padding: "28px 28px 0",
+              background: "#edf7e4",
+              padding: 28,
               display: "flex",
               flexDirection: "column",
             }}
@@ -913,46 +937,54 @@ export default function FeaturesSection() {
             <div
               style={{
                 flex: 1,
-                background: "rgba(255,255,255,0.7)",
-                borderRadius: "10px 10px 0 0",
-                padding: "20px 18px",
+                background: "#fff",
+                borderRadius: 12,
+                border: "1px solid rgba(0,0,0,0.05)",
+                padding: "18px",
                 minHeight: 200,
                 display: "flex",
                 flexDirection: "column",
-                gap: 12,
+                gap: 14,
               }}
             >
-              {/* Typing indicator */}
+              {/* Typing indicator — light-green banner with sparkle icon */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 10,
-                  background: "rgba(246,252,241,0.8)",
+                  gap: 12,
+                  background: "#f0f8e6",
                   borderRadius: 10,
                   padding: "10px 14px",
                 }}
               >
                 <div
                   style={{
-                    width: 28,
-                    height: 28,
+                    width: 30,
+                    height: 30,
                     borderRadius: "50%",
-                    background:
-                      "linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)",
+                    background: "#dfeec9",
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
                     flexShrink: 0,
                   }}
                 >
-                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+                  {/* AI sparkle — 4-point star with a small accent sparkle */}
+                  <svg
+                    className="animate-sparkle-shake"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                  >
                     <path
-                      d="M2 6l2.5 2.5L10 3"
-                      stroke="white"
-                      strokeWidth="1.6"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
+                      d="M11 3 L13 10 L20 12 L13 14 L11 21 L9 14 L2 12 L9 10 Z"
+                      fill="#65940c"
+                    />
+                    <path
+                      d="M19 3 L19.7 5 L21.7 5.7 L19.7 6.4 L19 8.4 L18.3 6.4 L16.3 5.7 L18.3 5 Z"
+                      fill="#65940c"
                     />
                   </svg>
                 </div>
@@ -966,18 +998,17 @@ export default function FeaturesSection() {
                 >
                   Creating Content Now
                 </span>
-                <div style={{ display: "flex", gap: 3 }}>
-                  {[0, 1].map((i) => (
+                <div style={{ display: "flex", alignItems: "center", gap: 4 }}>
+                  {[0, 1, 2].map((i) => (
                     <div
                       key={i}
+                      className="animate-typing-dot"
                       style={{
                         width: 8,
                         height: 8,
                         borderRadius: "50%",
-                        background:
-                          i === 0
-                            ? "rgba(101,148,12,0.5)"
-                            : "rgba(101,148,12,0.2)",
+                        background: "rgba(101,148,12,0.5)",
+                        animationDelay: `${i * 0.18}s`,
                       }}
                     />
                   ))}
@@ -987,7 +1018,7 @@ export default function FeaturesSection() {
               {/* Placeholder lines */}
               <div
                 style={{
-                  background: "rgba(0,0,0,0.04)",
+                  background: "rgba(0,0,0,0.05)",
                   borderRadius: 6,
                   height: 8,
                   width: "90%",
@@ -995,83 +1026,114 @@ export default function FeaturesSection() {
               />
               <div
                 style={{
-                  background: "rgba(0,0,0,0.04)",
+                  background: "rgba(0,0,0,0.05)",
                   borderRadius: 6,
                   height: 8,
                   width: "70%",
                 }}
               />
 
-              {/* Icons row */}
-              <div style={{ display: "flex", gap: 20, padding: "8px 0" }}>
-                {[1, 2].map((i) => (
+              {/* Image placeholder boxes — full-width 2-col grid, green tinted */}
+              <div
+                style={{
+                  display: "grid",
+                  gridTemplateColumns: "1fr 1fr",
+                  gap: 10,
+                  padding: "4px 0",
+                }}
+              >
+                {[0, 1].map((i) => (
                   <div
                     key={i}
                     style={{
-                      width: 44,
-                      height: 44,
+                      height: 56,
                       borderRadius: 10,
-                      background: "rgba(0,0,0,0.04)",
+                      background: "#f0f8e6",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                     }}
                   >
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    {/* Landscape / image upload icon */}
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <rect
-                        x="3"
-                        y="5"
-                        width="14"
-                        height="10"
+                        x="3.5"
+                        y="4.5"
+                        width="17"
+                        height="15"
                         rx="2"
-                        stroke="rgba(39,60,29,0.3)"
+                        stroke="#65940c"
+                        strokeWidth="1.6"
+                      />
+                      <circle
+                        cx="8.5"
+                        cy="9.5"
+                        r="1.2"
+                        stroke="#65940c"
                         strokeWidth="1.4"
                       />
                       <path
-                        d="M6 9h8M6 12h5"
-                        stroke="rgba(39,60,29,0.3)"
-                        strokeWidth="1.2"
+                        d="M20.5 14.5l-4.5-4-7 7"
+                        stroke="#65940c"
+                        strokeWidth="1.6"
                         strokeLinecap="round"
+                        strokeLinejoin="round"
                       />
                     </svg>
                   </div>
                 ))}
               </div>
 
-              {/* Input row */}
+              {/* Input row — light-green pill with paperclip + solid green Create button */}
               <div
                 style={{
                   display: "flex",
                   alignItems: "center",
-                  gap: 8,
-                  background: "#fff",
-                  borderRadius: 10,
-                  padding: "8px 12px",
-                  border: "1px solid rgba(0,0,0,0.07)",
+                  gap: 10,
+                  background: "#f0f8e6",
+                  borderRadius: 12,
+                  padding: "6px 6px 6px 10px",
                   marginTop: "auto",
                 }}
               >
-                <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-                  <path
-                    d="M2 7.5L5 10.5l7-7"
-                    stroke="rgba(39,60,29,0.3)"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <div
+                  style={{
+                    width: 28,
+                    height: 28,
+                    borderRadius: "50%",
+                    background: "#fff",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    flexShrink: 0,
+                  }}
+                >
+                  {/* Paperclip */}
+                  <svg width="14" height="14" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M10 4L4.5 9.5a2 2 0 1 0 2.83 2.83L13 6.5a3.5 3.5 0 0 0-4.95-4.95L2.5 7.1"
+                      stroke="#273c1d"
+                      strokeWidth="1.4"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </div>
                 <span
-                  style={{ fontSize: 12, color: "rgba(39,60,29,0.5)", flex: 1 }}
+                  style={{
+                    fontSize: 13,
+                    color: "rgba(39,60,29,0.55)",
+                    flex: 1,
+                  }}
                 >
                   Create a banner
                 </span>
                 <div
                   style={{
-                    borderRadius: 6,
-                    padding: "5px 12px",
-                    background:
-                      "linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)",
-                    fontSize: 11,
+                    borderRadius: 8,
+                    padding: "7px 16px",
+                    background: "#65940c",
+                    fontSize: 12,
                     fontWeight: 600,
                     color: "#fff",
                   }}
