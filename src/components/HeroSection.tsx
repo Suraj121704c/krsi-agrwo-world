@@ -40,6 +40,39 @@ export default function HeroSection() {
         paddingBottom: 80,
       }}
     >
+      {/* Background video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        preload="auto"
+        aria-hidden="true"
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          zIndex: 0,
+          pointerEvents: 'none',
+        }}
+      >
+        <source src="/videos/hero-bg.mp4" type="video/mp4" />
+      </video>
+
+      {/* Soft white overlay — fades the video so foreground content stays readable */}
+      <div
+        style={{
+          position: 'absolute',
+          inset: 0,
+          background:
+            'linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.75) 60%, rgba(255,255,255,0.92) 100%)',
+          zIndex: 1,
+          pointerEvents: 'none',
+        }}
+      />
+
       {/* Radial green ambient glow */}
       <div
         style={{
@@ -53,6 +86,7 @@ export default function HeroSection() {
           background:
             'radial-gradient(ellipse at 50% 30%, rgba(101,148,12,0.09) 0%, rgba(97,175,28,0.04) 40%, transparent 70%)',
           pointerEvents: 'none',
+          zIndex: 2,
         }}
       />
 
