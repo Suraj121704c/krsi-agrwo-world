@@ -24,12 +24,12 @@ const CUBES: Array<{
     position: [-D, 0, -D],
     icon: "bars",
     phase: 0.0,
-    speed: 3.0,
+    speed: 5.4,
     stretch: 0.45,
   },
-  { position: [-D, 0, D], icon: "leaf", phase: 1.6, speed: 2.2, stretch: 0.25 },
-  { position: [D, 0, -D], icon: "coin", phase: 2.4, speed: 3.5, stretch: 0.55 },
-  { position: [D, 0, D], icon: "spark", phase: 0.9, speed: 2.6, stretch: 0.3 },
+  { position: [-D, 0, D], icon: "leaf", phase: 1.6, speed: 4.0, stretch: 0.25 },
+  { position: [D, 0, -D], icon: "coin", phase: 2.4, speed: 6.3, stretch: 0.55 },
+  { position: [D, 0, D], icon: "spark", phase: 0.9, speed: 4.7, stretch: 0.3 },
 ];
 
 function CubeIcon({ kind }: { kind: IconKind }) {
