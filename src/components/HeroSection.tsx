@@ -20,6 +20,17 @@ const fadeUp = {
   show: { y: 0, opacity: 1, transition: { duration: 0.72, ease: EASE } },
 };
 
+// Framer-style per-word split: parent only schedules, each word does the visual rise/fade.
+const wordContainer = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.06 } },
+};
+
+const wordItem = {
+  hidden: { y: 26, opacity: 0 },
+  show: { y: 0, opacity: 1, transition: { duration: 0.65, ease: EASE } },
+};
+
 const BRAND_LOGOS = [
   "/images/brand-logo-1.svg",
   "/images/brand-logo-2.svg",
@@ -131,21 +142,45 @@ export default function HeroSection() {
               textTransform: "uppercase" as const,
             }}
           >
+            {/* Pulser dot — solid core + scaling/fading ring (Framer "Pulsing" + "Solid" pattern) */}
             <span
-              className="animate-blink"
               style={{
+                position: "relative",
+                display: "inline-flex",
                 width: 6,
                 height: 6,
-                borderRadius: "50%",
-                background: "#65940c",
                 flexShrink: 0,
               }}
-            />
+            >
+              <motion.span
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "50%",
+                  background: "#65940c",
+                }}
+                animate={{ scale: [1, 2.6, 1], opacity: [0.55, 0, 0.55] }}
+                transition={{
+                  duration: 1.8,
+                  repeat: Infinity,
+                  ease: "easeOut",
+                }}
+              />
+              <span
+                style={{
+                  position: "absolute",
+                  inset: 0,
+                  borderRadius: "50%",
+                  background: "#65940c",
+                  boxShadow: "0 0 8px rgba(101,148,12,0.55)",
+                }}
+              />
+            </span>
             New Gen AI Powered Agri Finance Platform
           </span>
         </motion.div>
         <motion.h1
-          variants={fadeUp}
+          variants={wordContainer}
           style={{
             fontSize: "clamp(42px, 6.5vw, 86px)",
             fontFamily: "'Satoshi', sans-serif",
@@ -156,12 +191,36 @@ export default function HeroSection() {
             margin: "0 0 28px",
           }}
         >
-          Infra Layer for Global
+          {"Infra Layer for Global".split(" ").map((word, i) => (
+            <motion.span
+              key={`l1-${i}`}
+              variants={wordItem}
+              style={{
+                display: "inline-block",
+                willChange: "transform",
+                marginRight: "0.22em",
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
           <br />
-          Agri Commodities
+          {"Agri Commodities".split(" ").map((word, i) => (
+            <motion.span
+              key={`l2-${i}`}
+              variants={wordItem}
+              style={{
+                display: "inline-block",
+                willChange: "transform",
+                marginRight: "0.22em",
+              }}
+            >
+              {word}
+            </motion.span>
+          ))}
         </motion.h1>
         <motion.p
-          variants={fadeUp}
+          variants={wordContainer}
           style={{
             fontSize: "clamp(14px, 1.5vw, 16px)",
             fontFamily: "var(--font-inter), Inter, sans-serif",
@@ -172,8 +231,21 @@ export default function HeroSection() {
             margin: "0 0 44px",
           }}
         >
-          Empowering farmers globally with transparent commodity trading,
-          flexible agri finance, and secure warehouse management solutions.
+          {"Empowering farmers globally with transparent commodity trading, flexible agri finance, and secure warehouse management solutions."
+            .split(" ")
+            .map((word, i) => (
+              <motion.span
+                key={i}
+                variants={wordItem}
+                style={{
+                  display: "inline-block",
+                  willChange: "transform",
+                  marginRight: "0.28em",
+                }}
+              >
+                {word}
+              </motion.span>
+            ))}
         </motion.p>
         <motion.div variants={fadeUp}>
           <a

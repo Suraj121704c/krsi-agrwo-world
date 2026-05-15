@@ -58,17 +58,16 @@ export default function ProcessSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Section green radial bg */}
+      {/* Section green top-fade bg — straight rectangle, no circular curve */}
       <div
         style={{
           position: 'absolute',
           top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: 1200,
-          height: 800,
-          borderRadius: '50%',
-          background: 'radial-gradient(ellipse at 50% 0%, rgba(244,252,241,0.95) 0%, transparent 65%)',
+          left: 0,
+          right: 0,
+          height: 460,
+          background:
+            'linear-gradient(180deg, rgba(244,252,241,0.95) 0%, rgba(244,252,241,0.55) 45%, transparent 100%)',
           pointerEvents: 'none',
           zIndex: 0,
         }}
