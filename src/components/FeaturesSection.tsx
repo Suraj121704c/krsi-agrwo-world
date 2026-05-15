@@ -933,7 +933,7 @@ export default function FeaturesSection() {
               Engage customers 24/7 with intelligent virtual assistants.
             </p>
 
-            {/* Chat UI mockup */}
+            {/* Chat UI mockup — Framer-style: rotation wobble + split-text + shimmer */}
             <div
               style={{
                 flex: 1,
@@ -947,8 +947,14 @@ export default function FeaturesSection() {
                 gap: 14,
               }}
             >
-              {/* Typing indicator — light-green banner with sparkle icon */}
-              <div
+              {/* Typing indicator — light-green banner with rotation jitter */}
+              <motion.div
+                animate={{ rotate: [-0.7, 0.7, -0.7] }}
+                transition={{
+                  duration: 5.2,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -956,6 +962,7 @@ export default function FeaturesSection() {
                   background: "#f0f8e6",
                   borderRadius: 10,
                   padding: "10px 14px",
+                  willChange: "transform",
                 }}
               >
                 <div
@@ -1013,27 +1020,41 @@ export default function FeaturesSection() {
                     />
                   ))}
                 </div>
-              </div>
+              </motion.div>
 
-              {/* Placeholder lines */}
-              <div
+              {/* Placeholder lines — gentle wobble in opposite phases */}
+              <motion.div
+                animate={{ rotate: [0.5, -0.5, 0.5] }}
+                transition={{
+                  duration: 6,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
                   background: "rgba(0,0,0,0.05)",
                   borderRadius: 6,
                   height: 8,
                   width: "90%",
+                  willChange: "transform",
                 }}
               />
-              <div
+              <motion.div
+                animate={{ rotate: [-0.6, 0.6, -0.6] }}
+                transition={{
+                  duration: 5.5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
                   background: "rgba(0,0,0,0.05)",
                   borderRadius: 6,
                   height: 8,
                   width: "70%",
+                  willChange: "transform",
                 }}
               />
 
-              {/* Image placeholder boxes — full-width 2-col grid, green tinted */}
+              {/* Image placeholder boxes — full-width 2-col grid, each tilts on its own clock */}
               <div
                 style={{
                   display: "grid",
@@ -1042,9 +1063,19 @@ export default function FeaturesSection() {
                   padding: "4px 0",
                 }}
               >
-                {[0, 1].map((i) => (
-                  <div
+                {[
+                  { from: -1.2, to: 1.2, duration: 5.6, delay: 0 },
+                  { from: 1.2, to: -1.2, duration: 6.2, delay: 0.5 },
+                ].map((cfg, i) => (
+                  <motion.div
                     key={i}
+                    animate={{ rotate: [cfg.from, cfg.to, cfg.from] }}
+                    transition={{
+                      duration: cfg.duration,
+                      repeat: Infinity,
+                      ease: "easeInOut",
+                      delay: cfg.delay,
+                    }}
                     style={{
                       height: 56,
                       borderRadius: 10,
@@ -1052,6 +1083,7 @@ export default function FeaturesSection() {
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
+                      willChange: "transform",
                     }}
                   >
                     {/* Landscape / image upload icon */}
@@ -1080,12 +1112,18 @@ export default function FeaturesSection() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
 
-              {/* Input row — light-green pill with paperclip + solid green Create button */}
-              <div
+              {/* Input row — paperclip + split-text bobbing placeholder + shimmer button */}
+              <motion.div
+                animate={{ rotate: [-0.4, 0.4, -0.4] }}
+                transition={{
+                  duration: 5.8,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 style={{
                   display: "flex",
                   alignItems: "center",
@@ -1094,6 +1132,7 @@ export default function FeaturesSection() {
                   borderRadius: 12,
                   padding: "6px 6px 6px 10px",
                   marginTop: "auto",
+                  willChange: "transform",
                 }}
               >
                 <div
@@ -1119,15 +1158,36 @@ export default function FeaturesSection() {
                     />
                   </svg>
                 </div>
+                {/* Split-text: each glyph in its own inline-block motion.span, bobbing on a staggered wave */}
                 <span
                   style={{
                     fontSize: 13,
                     color: "rgba(39,60,29,0.55)",
                     flex: 1,
+                    display: "inline-flex",
+                    whiteSpace: "pre",
                   }}
                 >
-                  Create a banner
+                  {"Create a banner".split("").map((char, i) => (
+                    <motion.span
+                      key={i}
+                      style={{
+                        display: "inline-block",
+                        willChange: "transform",
+                      }}
+                      animate={{ y: [0, -2.5, 0] }}
+                      transition={{
+                        duration: 1.6,
+                        repeat: Infinity,
+                        ease: "easeInOut",
+                        delay: i * 0.07,
+                      }}
+                    >
+                      {char === " " ? " " : char}
+                    </motion.span>
+                  ))}
                 </span>
+                {/* Create button — sweeping shimmer overlay loops left→right */}
                 <div
                   style={{
                     borderRadius: 8,
@@ -1136,11 +1196,31 @@ export default function FeaturesSection() {
                     fontSize: 12,
                     fontWeight: 600,
                     color: "#fff",
+                    position: "relative",
+                    overflow: "hidden",
                   }}
                 >
-                  Create
+                  <motion.div
+                    style={{
+                      position: "absolute",
+                      inset: 0,
+                      background:
+                        "linear-gradient(115deg, transparent 30%, rgba(255,255,255,0.5) 50%, transparent 70%)",
+                      pointerEvents: "none",
+                    }}
+                    animate={{ x: ["-120%", "120%"] }}
+                    transition={{
+                      duration: 2.2,
+                      repeat: Infinity,
+                      ease: "linear",
+                      repeatDelay: 0.8,
+                    }}
+                  />
+                  <span style={{ position: "relative", zIndex: 1 }}>
+                    Create
+                  </span>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         </div>
