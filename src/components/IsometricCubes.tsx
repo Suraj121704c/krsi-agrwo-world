@@ -106,7 +106,7 @@ function Cube({
         castShadow
       >
         <meshStandardMaterial
-          color="#e8f6cc"
+          color="#d5e6d9"
           roughness={0.7}
           metalness={0.02}
           toneMapped={false}

@@ -52,7 +52,7 @@ export default function HeroSection() {
         justifyContent: "center",
         position: "relative",
         overflow: "hidden",
-        paddingTop: 120,
+        paddingTop: 160,
         paddingBottom: 80,
       }}
     >
@@ -88,19 +88,22 @@ export default function HeroSection() {
         }}
       />
 
+      {/* Half-circle stage — solid white interior masks the video below the curve; thin green border defines the horizon line. */}
       <div
         style={{
           position: "absolute",
-          top: "-10%",
+          bottom: -1500,
           left: "50%",
           transform: "translateX(-50%)",
-          width: 1100,
-          height: 700,
+          width: 2000,
+          height: 2000,
           borderRadius: "50%",
-          background:
-            "radial-gradient(ellipse at 50% 30%, rgba(101,148,12,0.09) 0%, rgba(97,175,28,0.04) 40%, transparent 70%)",
+          background: "#fff",
+          border: "1.5px solid rgba(101,148,12,0.28)",
+          boxShadow:
+            "inset 0 2px 0 rgba(255,255,255,1), 0 -2px 24px rgba(101,148,12,0.06)",
           pointerEvents: "none",
-          zIndex: 2,
+          zIndex: 5,
         }}
       />
 
@@ -287,7 +290,10 @@ export default function HeroSection() {
             </span>
           </a>
         </motion.div>
-        <motion.div variants={fadeUp}>
+        <motion.div
+          variants={fadeUp}
+          style={{ position: "relative", zIndex: 20 }}
+        >
           <IsometricCubes />
         </motion.div>
         <motion.div variants={fadeUp} style={{ width: "100%" }}>
