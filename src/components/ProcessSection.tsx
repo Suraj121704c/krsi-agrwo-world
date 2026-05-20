@@ -1,5 +1,6 @@
 'use client';
 
+import { Fragment } from 'react';
 import { motion } from 'framer-motion';
 
 const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
@@ -239,35 +240,25 @@ export default function ProcessSection() {
           ))}
         </div>
 
-        {/* Stats row — individual boxed cards with short dividers between */}
+        {/* Stats row — individual boxed cards with dividers centered between them */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.65, ease: EASE }}
           style={{
-            display: 'flex',
-            justifyContent: 'center',
+            display: 'grid',
+            gridTemplateColumns: '1fr auto 1fr auto 1fr',
             alignItems: 'center',
-            gap: 8,
-            flexWrap: 'wrap',
+            gap: 12,
             maxWidth: 820,
             margin: '0 auto',
           }}
         >
           {STATS.map((stat, i) => (
-            <div
-              key={stat.label}
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                flex: '1 1 220px',
-                minWidth: 200,
-              }}
-            >
+            <Fragment key={stat.label}>
               <div
                 style={{
-                  flex: 1,
                   textAlign: 'center',
                   padding: 'clamp(20px, 3vw, 32px) clamp(20px, 3vw, 36px)',
                   borderRadius: 14,
@@ -307,14 +298,13 @@ export default function ProcessSection() {
                   aria-hidden="true"
                   style={{
                     width: 1,
-                    height: 36,
-                    background: 'rgba(101,148,12,0.18)',
-                    flexShrink: 0,
-                    margin: '0 4px',
+                    height: 64,
+                    background: 'rgba(101,148,12,0.22)',
+                    justifySelf: 'center',
                   }}
                 />
               )}
-            </div>
+            </Fragment>
           ))}
         </motion.div>
       </div>
