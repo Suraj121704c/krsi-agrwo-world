@@ -157,26 +157,34 @@ export default function ProcessSection() {
                 backdropFilter: 'blur(6px)',
                 WebkitBackdropFilter: 'blur(6px)',
                 borderRadius: 16,
-                padding: '32px 28px',
+                padding: '28px 28px 24px',
                 position: 'relative',
+                display: 'flex',
+                flexDirection: 'column',
+                minHeight: 320,
               }}
             >
-              {/* Step badge */}
+              {/* Number badge — top right */}
               <div
                 style={{
                   position: 'absolute',
-                  top: 20,
-                  right: 20,
-                  borderRadius: 100,
-                  padding: '4px 13px',
-                  background: 'linear-gradient(180deg, rgba(246,241,252,0.65) 0%, rgba(255,255,255,0.65) 100%)',
-                  boxShadow: 'inset 0 0 1px 1px rgba(255,255,255,0.9)',
-                  fontSize: 11,
+                  top: 18,
+                  right: 18,
+                  width: 26,
+                  height: 26,
+                  borderRadius: '50%',
+                  background: 'linear-gradient(180deg, rgba(246,241,252,0.85) 0%, rgba(255,255,255,0.85) 100%)',
+                  boxShadow: 'inset 0 0 1px 1px rgba(255,255,255,0.95), 0 1px 2px rgba(0,0,0,0.04)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: 12,
                   fontWeight: 600,
                   color: '#273c1d',
+                  lineHeight: 1,
                 }}
               >
-                {step.step}
+                {i === 0 ? 'H' : i}
               </div>
 
               {/* Icon box */}
@@ -207,14 +215,31 @@ export default function ProcessSection() {
               >
                 {step.title}
               </h3>
-              <p style={{ fontSize: 14, color: 'rgba(39,60,29,0.6)', lineHeight: 1.65, margin: 0 }}>
+              <p style={{ fontSize: 14, color: 'rgba(39,60,29,0.65)', lineHeight: 1.65, margin: '0 0 24px' }}>
                 {step.desc}
               </p>
+
+              {/* Step pill — bottom */}
+              <div
+                style={{
+                  marginTop: 'auto',
+                  alignSelf: 'flex-start',
+                  borderRadius: 100,
+                  padding: '5px 14px',
+                  background: 'linear-gradient(180deg, rgba(246,241,252,0.65) 0%, rgba(255,255,255,0.65) 100%)',
+                  boxShadow: 'inset 0 0 1px 1px rgba(255,255,255,0.9), 0 1px 2px rgba(0,0,0,0.03)',
+                  fontSize: 12,
+                  fontWeight: 600,
+                  color: '#273c1d',
+                }}
+              >
+                {step.step}
+              </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Stats row */}
+        {/* Stats row — individual boxed cards with short dividers between */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -223,35 +248,71 @@ export default function ProcessSection() {
           style={{
             display: 'flex',
             justifyContent: 'center',
-            alignItems: 'stretch',
-            borderRadius: 16,
-            background: 'linear-gradient(180deg, rgba(246,241,252,0.35) 0%, rgba(255,255,255,0.35) 100%)',
-            boxShadow: 'inset 0 0 1px 1px rgba(255,255,255,0.9)',
-            overflow: 'hidden',
+            alignItems: 'center',
+            gap: 8,
             flexWrap: 'wrap',
+            maxWidth: 820,
+            margin: '0 auto',
           }}
         >
           {STATS.map((stat, i) => (
-            <div key={stat.label} style={{ display: 'flex', alignItems: 'center', flex: 1, minWidth: 180 }}>
-              <div style={{ padding: '36px 48px', textAlign: 'center', flex: 1 }}>
+            <div
+              key={stat.label}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                flex: '1 1 220px',
+                minWidth: 200,
+              }}
+            >
+              <div
+                style={{
+                  flex: 1,
+                  textAlign: 'center',
+                  padding: 'clamp(20px, 3vw, 32px) clamp(20px, 3vw, 36px)',
+                  borderRadius: 14,
+                  background:
+                    'linear-gradient(180deg, rgba(232,246,221,0.55) 0%, rgba(244,252,241,0.55) 100%)',
+                  border: '1px solid rgba(101,148,12,0.10)',
+                  boxShadow:
+                    'inset 0 0 1px 1px rgba(255,255,255,0.9), 0 1px 2px rgba(101,148,12,0.04)',
+                }}
+              >
                 <p
                   style={{
-                    fontSize: 'clamp(24px, 3vw, 32px)',
+                    fontSize: 'clamp(28px, 3.2vw, 38px)',
                     fontFamily: "'Satoshi', sans-serif",
                     fontWeight: 700,
                     color: '#65940c',
-                    margin: '0 0 4px',
-                    letterSpacing: '-1px',
+                    margin: '0 0 6px',
+                    letterSpacing: '-0.03em',
+                    lineHeight: 1.1,
                   }}
                 >
                   {stat.value}
                 </p>
-                <p style={{ fontSize: 13, color: '#273c1d', margin: 0, fontWeight: 500 }}>
+                <p
+                  style={{
+                    fontSize: 13,
+                    color: '#273c1d',
+                    margin: 0,
+                    fontWeight: 500,
+                  }}
+                >
                   {stat.label}
                 </p>
               </div>
               {i < STATS.length - 1 && (
-                <div style={{ width: 1, height: 48, background: '#eef6ea', flexShrink: 0 }} />
+                <div
+                  aria-hidden="true"
+                  style={{
+                    width: 1,
+                    height: 36,
+                    background: 'rgba(101,148,12,0.18)',
+                    flexShrink: 0,
+                    margin: '0 4px',
+                  }}
+                />
               )}
             </div>
           ))}
