@@ -450,7 +450,7 @@ export default function FeaturesSection() {
             style={{
               ...cardStyle,
               background: "#edf7e4",
-              padding: "28px 28px 0",
+              padding: 28,
               display: "flex",
               flexDirection: "column",
             }}
@@ -484,9 +484,8 @@ export default function FeaturesSection() {
                 connection lines visibly emanate from inside the pill. */}
             <div
               style={{
-                flex: 1,
                 background: "#fff",
-                borderRadius: "12px 12px 0 0",
+                borderRadius: 12,
                 border: "1px solid rgba(0,0,0,0.05)",
                 borderBottom: "none",
                 position: "relative",
