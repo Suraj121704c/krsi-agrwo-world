@@ -1,35 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
 import Image from "next/image";
-import dynamic from "next/dynamic";
-
-const IsometricCubes = dynamic(() => import("./IsometricCubes"), {
-  ssr: false,
-});
-
-const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
-
-const container = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
-};
-
-const fadeUp = {
-  hidden: { y: 32, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.72, ease: EASE } },
-};
-
-// Framer-style per-word split: parent only schedules, each word does the visual rise/fade.
-const wordContainer = {
-  hidden: {},
-  show: { transition: { staggerChildren: 0.06 } },
-};
-
-const wordItem = {
-  hidden: { y: 26, opacity: 0 },
-  show: { y: 0, opacity: 1, transition: { duration: 0.65, ease: EASE } },
-};
 
 const BRAND_LOGOS = [
   "/images/brand-logo-1.svg",
@@ -88,29 +57,7 @@ export default function HeroSection() {
         }}
       />
 
-      {/* Half-circle stage — solid white interior masks the video below the curve; thin green border defines the horizon line. */}
       <div
-        style={{
-          position: "absolute",
-          bottom: -1500,
-          left: "50%",
-          transform: "translateX(-50%)",
-          width: 2000,
-          height: 2000,
-          borderRadius: "50%",
-          background: "#fff",
-          border: "1.5px solid rgba(101,148,12,0.28)",
-          boxShadow:
-            "inset 0 2px 0 rgba(255,255,255,1), 0 -2px 24px rgba(101,148,12,0.06)",
-          pointerEvents: "none",
-          zIndex: 5,
-        }}
-      />
-
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
         style={{
           position: "relative",
           zIndex: 10,
@@ -124,7 +71,7 @@ export default function HeroSection() {
           margin: "0 auto",
         }}
       >
-        <motion.div variants={fadeUp}>
+        <div>
           <span
             style={{
               display: "inline-flex",
@@ -145,45 +92,22 @@ export default function HeroSection() {
               textTransform: "uppercase" as const,
             }}
           >
-            {/* Pulser dot — solid core + scaling/fading ring (Framer "Pulsing" + "Solid" pattern) */}
+            {/* Static brand dot */}
             <span
               style={{
-                position: "relative",
                 display: "inline-flex",
                 width: 6,
                 height: 6,
                 flexShrink: 0,
+                borderRadius: "50%",
+                background: "#65940c",
+                boxShadow: "0 0 8px rgba(101,148,12,0.55)",
               }}
-            >
-              <motion.span
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  borderRadius: "50%",
-                  background: "#65940c",
-                }}
-                animate={{ scale: [1, 2.6, 1], opacity: [0.55, 0, 0.55] }}
-                transition={{
-                  duration: 1.8,
-                  repeat: Infinity,
-                  ease: "easeOut",
-                }}
-              />
-              <span
-                style={{
-                  position: "absolute",
-                  inset: 0,
-                  borderRadius: "50%",
-                  background: "#65940c",
-                  boxShadow: "0 0 8px rgba(101,148,12,0.55)",
-                }}
-              />
-            </span>
+            />
             New Gen AI Powered Agri Finance Platform
           </span>
-        </motion.div>
-        <motion.h1
-          variants={wordContainer}
+        </div>
+        <h1
           style={{
             fontSize: "clamp(42px, 6.5vw, 86px)",
             fontFamily: "'Satoshi', sans-serif",
@@ -194,36 +118,11 @@ export default function HeroSection() {
             margin: "0 0 28px",
           }}
         >
-          {"Infra Layer for Global".split(" ").map((word, i) => (
-            <motion.span
-              key={`l1-${i}`}
-              variants={wordItem}
-              style={{
-                display: "inline-block",
-                willChange: "transform",
-                marginRight: "0.22em",
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
+          Infra Layer for Global
           <br />
-          {"Agri Commodities".split(" ").map((word, i) => (
-            <motion.span
-              key={`l2-${i}`}
-              variants={wordItem}
-              style={{
-                display: "inline-block",
-                willChange: "transform",
-                marginRight: "0.22em",
-              }}
-            >
-              {word}
-            </motion.span>
-          ))}
-        </motion.h1>
-        <motion.p
-          variants={wordContainer}
+          Agri Commodities
+        </h1>
+        <p
           style={{
             fontSize: "clamp(14px, 1.5vw, 16px)",
             fontFamily: "var(--font-inter), Inter, sans-serif",
@@ -234,23 +133,10 @@ export default function HeroSection() {
             margin: "0 0 44px",
           }}
         >
-          {"Empowering farmers globally with transparent commodity trading, flexible agri finance, and secure warehouse management solutions."
-            .split(" ")
-            .map((word, i) => (
-              <motion.span
-                key={i}
-                variants={wordItem}
-                style={{
-                  display: "inline-block",
-                  willChange: "transform",
-                  marginRight: "0.28em",
-                }}
-              >
-                {word}
-              </motion.span>
-            ))}
-        </motion.p>
-        <motion.div variants={fadeUp}>
+          Empowering farmers globally with transparent commodity trading,
+          flexible agri finance, and secure warehouse management solutions.
+        </p>
+        <div>
           <a
             href="#contact"
             style={{
@@ -277,31 +163,31 @@ export default function HeroSection() {
                 borderBottom: "1.25px solid rgba(255,255,255,0.42)",
               }}
             >
-              Book A Free Call Now
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M3 8h10M9 4l4 4-4 4"
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+                <circle
+                  cx="9"
+                  cy="6"
+                  r="2.9"
                   stroke="white"
-                  strokeWidth="1.6"
+                  strokeWidth="1.5"
+                />
+                <path
+                  d="M3.6 15c0-2.6 2.4-4.2 5.4-4.2s5.4 1.6 5.4 4.2"
+                  stroke="white"
+                  strokeWidth="1.5"
                   strokeLinecap="round"
-                  strokeLinejoin="round"
                 />
               </svg>
+              Book A Free Call Now
             </span>
           </a>
-        </motion.div>
-        <motion.div
-          variants={fadeUp}
-          style={{ position: "relative", zIndex: 20 }}
-        >
-          <IsometricCubes />
-        </motion.div>
-        <motion.div variants={fadeUp} style={{ width: "100%" }}>
+        </div>
+        <div style={{ width: "100%", marginTop: 48 }}>
           <p
             style={{
               fontSize: 11,
               fontWeight: 600,
-              color: "rgba(39,60,29,0.35)",
+              color: "rgba(28,22,41,0.55)",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               marginBottom: 20,
@@ -330,13 +216,13 @@ export default function HeroSection() {
                   height: 22,
                   width: "auto",
                   objectFit: "contain",
-                  filter: "brightness(0) opacity(0.28)",
+                  filter: "brightness(0) opacity(0.62)",
                 }}
               />
             ))}
           </div>
-        </motion.div>
-      </motion.div>
+        </div>
+      </div>
     </section>
   );
 }

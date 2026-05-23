@@ -76,37 +76,22 @@ function FaqItem({ faq, index }: { faq: { q: string; a: string }; index: number 
         <span style={{ fontSize: 14, fontWeight: 600, color: '#1c1629', lineHeight: 1.45, flex: 1 }}>
           {faq.q}
         </span>
-        <div
-          style={{
-            flexShrink: 0,
-            width: 28,
-            height: 28,
-            borderRadius: '50%',
-            background: open
-              ? 'linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)'
-              : 'rgba(101,148,12,0.08)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            transition: 'background 0.2s',
-          }}
+        <motion.svg
+          width="18"
+          height="18"
+          viewBox="0 0 18 18"
+          fill="none"
+          style={{ flexShrink: 0 }}
+          animate={{ rotate: open ? 45 : 0 }}
+          transition={{ duration: 0.2 }}
         >
-          <motion.svg
-            width="12"
-            height="12"
-            viewBox="0 0 12 12"
-            fill="none"
-            animate={{ rotate: open ? 45 : 0 }}
-            transition={{ duration: 0.2 }}
-          >
-            <path
-              d="M6 2v8M2 6h8"
-              stroke={open ? '#fff' : '#65940c'}
-              strokeWidth="1.8"
-              strokeLinecap="round"
-            />
-          </motion.svg>
-        </div>
+          <path
+            d="M9 3v12M3 9h12"
+            stroke={open ? '#65940c' : 'rgba(39,60,29,0.4)'}
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </motion.svg>
       </button>
 
       <AnimatePresence initial={false}>
@@ -157,7 +142,7 @@ export default function FaqSection() {
         <div
           style={{
             display: 'flex',
-            alignItems: 'flex-start',
+            alignItems: 'center',
             justifyContent: 'space-between',
             flexWrap: 'wrap',
             gap: 24,
@@ -181,33 +166,46 @@ export default function FaqSection() {
             Questions answered
           </motion.h2>
 
-          <motion.div
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6, ease: EASE }}
+            style={{
+              fontSize: 14,
+              color: 'rgba(39,60,29,0.72)',
+              margin: 0,
+              maxWidth: 380,
+              lineHeight: 1.6,
+              fontFamily: 'var(--font-inter), Inter, sans-serif',
+            }}
+          >
+            We&apos;re here to help you and solve objections. Find answers to the
+            most common questions below.
+          </motion.p>
+
+          <motion.a
+            href="#contact"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: EASE }}
-            style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: 12, maxWidth: 300 }}
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              borderRadius: 100,
+              padding: '10px 24px',
+              background: 'linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)',
+              color: '#fff',
+              fontSize: 14,
+              fontWeight: 600,
+              textDecoration: 'none',
+              boxShadow:
+                '0 4px 14px rgba(97,175,28,0.25), 0 0 0 5px rgba(255,255,255,0.9), 0 0 0 6px rgba(101,148,12,0.12)',
+            }}
           >
-            <p style={{ fontSize: 13, color: 'rgba(39,60,29,0.5)', margin: 0, textAlign: 'right', lineHeight: 1.6, fontFamily: 'var(--font-inter), Inter, sans-serif' }}>
-              Can't find what you're looking for? Our team is here to help.
-            </p>
-            <a
-              href="#contact"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                borderRadius: 100,
-                padding: '8px 20px',
-                background: 'linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)',
-                color: '#fff',
-                fontSize: 13,
-                fontWeight: 600,
-                textDecoration: 'none',
-              }}
-            >
-              Contact Sales Now
-            </a>
-          </motion.div>
+            Contact Sales Now
+          </motion.a>
         </div>
 
         {/* 2-column FAQ grid */}
@@ -252,7 +250,10 @@ export default function FaqSection() {
               <rect x="1" y="3" width="12" height="8" rx="1.5" stroke="#65940c" strokeWidth="1.4" />
               <path d="M1 5l6 3.5L13 5" stroke="#65940c" strokeWidth="1.4" strokeLinecap="round" />
             </svg>
-            Feel free to mail us — hello@krsiagrotech.com
+            Feel free to mail us for any enquiries :{' '}
+            <span style={{ textDecoration: 'underline' }}>
+              hello@krsiagrotech.com
+            </span>
           </a>
         </motion.div>
       </div>

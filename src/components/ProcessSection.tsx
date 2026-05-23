@@ -59,21 +59,6 @@ export default function ProcessSection() {
         overflow: 'hidden',
       }}
     >
-      {/* Section green top-fade bg — straight rectangle, no circular curve */}
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          height: 460,
-          background:
-            'linear-gradient(180deg, rgba(244,252,241,0.95) 0%, rgba(244,252,241,0.55) 45%, transparent 100%)',
-          pointerEvents: 'none',
-          zIndex: 0,
-        }}
-      />
-
       <div style={{ maxWidth: 1080, margin: '0 auto', position: 'relative', zIndex: 1 }}>
         {/* Section header */}
         <motion.div
@@ -101,11 +86,19 @@ export default function ProcessSection() {
               marginBottom: 20,
             }}
           >
+            <img src="/images/process.png" alt="" width={14} height={14} style={{ display: 'block' }} />
             Process
           </span>
 
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 20 }}>
-            <div style={{ flex: 1, maxWidth: 100, height: 1, background: '#eef6ea' }} />
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 24 }}>
+            <div
+              style={{
+                flex: 1,
+                maxWidth: 220,
+                height: 2,
+                background: 'linear-gradient(90deg, rgba(101,148,12,0) 0%, rgba(101,148,12,0.22) 100%)',
+              }}
+            />
             <h2
               style={{
                 fontSize: 'clamp(28px, 4vw, 44px)',
@@ -118,7 +111,14 @@ export default function ProcessSection() {
             >
               Performance Through Process
             </h2>
-            <div style={{ flex: 1, maxWidth: 100, height: 1, background: '#eef6ea' }} />
+            <div
+              style={{
+                flex: 1,
+                maxWidth: 220,
+                height: 2,
+                background: 'linear-gradient(90deg, rgba(101,148,12,0.22) 0%, rgba(101,148,12,0) 100%)',
+              }}
+            />
           </div>
 
           <p
@@ -185,7 +185,7 @@ export default function ProcessSection() {
                   lineHeight: 1,
                 }}
               >
-                {i === 0 ? 'H' : i}
+                {i + 1}
               </div>
 
               {/* Icon box */}

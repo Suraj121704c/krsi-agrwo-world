@@ -68,7 +68,7 @@ export default function ComparisonSection() {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: "0.1em",
-              color: "#65940c",
+              color: "#1c1629",
               textTransform: "uppercase" as const,
               marginBottom: 20,
             }}
@@ -91,25 +91,26 @@ export default function ComparisonSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 20,
+              gap: 24,
             }}
           >
             <div
               style={{
                 flex: 1,
-                maxWidth: 160,
-                height: 1,
-                background: "#eef6ea",
+                height: 2,
+                background:
+                  "linear-gradient(90deg, rgba(101,148,12,0) 0%, rgba(101,148,12,0.22) 100%)",
               }}
             />
             <h2
               style={{
                 fontSize: "clamp(28px, 4vw, 44px)",
                 fontFamily: "'Satoshi', sans-serif",
-                fontWeight: 500,
-                color: "#273c1d",
+                fontWeight: 700,
+                color: "#1c1629",
                 margin: 0,
                 letterSpacing: "-1.2px",
+                whiteSpace: "nowrap" as const,
               }}
             >
               Why Choose Us
@@ -117,9 +118,9 @@ export default function ComparisonSection() {
             <div
               style={{
                 flex: 1,
-                maxWidth: 160,
-                height: 1,
-                background: "#eef6ea",
+                height: 2,
+                background:
+                  "linear-gradient(90deg, rgba(101,148,12,0.22) 0%, rgba(101,148,12,0) 100%)",
               }}
             />
           </div>
@@ -156,44 +157,29 @@ export default function ComparisonSection() {
               style={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
                 gap: 10,
                 marginBottom: 16,
               }}
             >
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: 10,
-                  background:
-                    "linear-gradient(135deg, #7c3aed 0%, #4f46e5 100%)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  boxShadow: "0 2px 8px rgba(79,70,229,0.25)",
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <rect
-                    x="2"
-                    y="2"
-                    width="14"
-                    height="14"
-                    rx="3"
-                    fill="rgba(255,255,255,0.9)"
-                  />
-                  <path
-                    d="M5.5 9l2.5 2.5L12.5 6.5"
-                    stroke="#4f46e5"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
-              </div>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"
+                  stroke="#6d4aff"
+                  strokeWidth="1.6"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M3.3 7L12 12l8.7-5M12 22V12"
+                  stroke="#6d4aff"
+                  strokeWidth="1.6"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
               <span
                 style={{
-                  fontSize: 16,
+                  fontSize: 18,
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 700,
                   color: "#1c1629",
@@ -239,54 +225,36 @@ export default function ComparisonSection() {
               style={{
                 display: "flex",
                 alignItems: "center",
+                justifyContent: "center",
                 gap: 10,
                 marginBottom: 16,
               }}
             >
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: 10,
-                  background: "rgba(0,0,0,0.05)",
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                }}
-              >
-                <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                  <rect
-                    x="2"
-                    y="11"
-                    width="14"
-                    height="3"
-                    rx="1"
-                    stroke="rgba(39,60,29,0.5)"
-                    strokeWidth="1.4"
-                  />
-                  <rect
-                    x="2"
-                    y="7"
-                    width="14"
-                    height="3"
-                    rx="1"
-                    stroke="rgba(39,60,29,0.5)"
-                    strokeWidth="1.4"
-                  />
-                  <rect
-                    x="2"
-                    y="3"
-                    width="14"
-                    height="3"
-                    rx="1"
-                    stroke="rgba(39,60,29,0.5)"
-                    strokeWidth="1.4"
-                  />
-                </svg>
-              </div>
+              <svg width="26" height="26" viewBox="0 0 24 24" fill="none">
+                <path
+                  d="M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83Z"
+                  stroke="#1c1629"
+                  strokeWidth="1.5"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 12.65l9.17 4.16a2 2 0 0 0 1.66 0L22 12.65"
+                  stroke="#1c1629"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+                <path
+                  d="M2 17.65l9.17 4.16a2 2 0 0 0 1.66 0L22 17.65"
+                  stroke="#1c1629"
+                  strokeWidth="1.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              </svg>
               <span
                 style={{
-                  fontSize: 16,
+                  fontSize: 18,
                   fontFamily: "'Satoshi', sans-serif",
                   fontWeight: 700,
                   color: "#1c1629",

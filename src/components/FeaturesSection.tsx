@@ -111,12 +111,16 @@ const TICKER_ITEMS = [
 const cardStyle: React.CSSProperties = {
   background:
     "linear-gradient(180deg, rgba(237,237,237,0.48) 0%, rgba(255,255,255,0.48) 100%)",
-  boxShadow: "inset 0 0 1px 1px rgba(255,255,255,0.9)",
+  boxShadow:
+    "0 0.8px 0.8px -1px rgba(0,0,0,0.04), 0 2.4px 2.4px -2px rgba(0,0,0,0.04), 0 6.4px 6.4px -3px rgba(0,0,0,0.03), 0 20px 20px -4px rgba(0,0,0,0.01), inset 0 0 1px 1px rgba(255,255,255,0.7)",
   backdropFilter: "blur(6px)",
   WebkitBackdropFilter: "blur(6px)",
   borderRadius: 16,
   overflow: "hidden",
 };
+
+// Subtle green fill for the bordered feature cards (2, 3, 4).
+const cardGreen = "linear-gradient(180deg, #e6f2d8 0%, #f1f8e8 100%)";
 
 export default function FeaturesSection() {
   return (
@@ -164,6 +168,7 @@ export default function FeaturesSection() {
             style={{
               display: "inline-flex",
               alignItems: "center",
+              gap: 6,
               borderRadius: 100,
               padding: "5px 16px",
               background:
@@ -178,6 +183,13 @@ export default function FeaturesSection() {
               marginBottom: 20,
             }}
           >
+            <img
+              src="/images/process.png"
+              alt=""
+              width={14}
+              height={14}
+              style={{ display: "block" }}
+            />
             Features
           </span>
 
@@ -186,15 +198,16 @@ export default function FeaturesSection() {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              gap: 20,
+              gap: 24,
             }}
           >
             <div
               style={{
                 flex: 1,
-                maxWidth: 100,
-                height: 1,
-                background: "#eef6ea",
+                maxWidth: 220,
+                height: 2,
+                background:
+                  "linear-gradient(90deg, rgba(101,148,12,0) 0%, rgba(101,148,12,0.22) 100%)",
               }}
             />
             <h2
@@ -212,9 +225,10 @@ export default function FeaturesSection() {
             <div
               style={{
                 flex: 1,
-                maxWidth: 100,
-                height: 1,
-                background: "#eef6ea",
+                maxWidth: 220,
+                height: 2,
+                background:
+                  "linear-gradient(90deg, rgba(101,148,12,0.22) 0%, rgba(101,148,12,0) 100%)",
               }}
             />
           </div>
@@ -238,8 +252,9 @@ export default function FeaturesSection() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
+            alignItems: "start",
             gap: 16,
-            marginBottom: 16,
+            marginBottom: 20,
           }}
         >
           <motion.div
@@ -249,8 +264,8 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE }}
             style={{
               ...cardStyle,
-              background:
-                "linear-gradient(225deg, #e6f1d5 0%, #f6faec 50%, #f8fbf0 100%)",
+              background: "transparent",
+              boxShadow: "none",
               padding: "36px 32px",
               display: "flex",
               flexDirection: "column",
@@ -395,7 +410,8 @@ export default function FeaturesSection() {
                     background: "#fff",
                     borderRadius: 14,
                     padding: "22px 22px 26px",
-                    border: "1px solid rgba(0,0,0,0.04)",
+                    boxShadow:
+                      "0 0.8px 0.8px -1px rgba(0,0,0,0.04), 0 2.4px 2.4px -2px rgba(0,0,0,0.04), 0 6.4px 6.4px -3px rgba(0,0,0,0.03), 0 20px 20px -4px rgba(0,0,0,0.01), inset 0 0 1px 1px rgba(255,255,255,0.7)",
                   }}
                 >
                   <div
@@ -449,7 +465,7 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
             style={{
               ...cardStyle,
-              background: "#edf7e4",
+              background: cardGreen,
               padding: 28,
               display: "flex",
               flexDirection: "column",
@@ -489,7 +505,7 @@ export default function FeaturesSection() {
                 border: "1px solid rgba(0,0,0,0.05)",
                 borderBottom: "none",
                 position: "relative",
-                height: 280,
+                height: 270,
                 overflow: "hidden",
               }}
             >
@@ -723,17 +739,7 @@ export default function FeaturesSection() {
               </div>
             </div>
           </motion.div>
-        </div>
 
-        {/* Row 2: Tokenized Assets + Chatbots */}
-        <div
-          style={{
-            display: "grid",
-            gridTemplateColumns: "1fr 1fr",
-            gap: 16,
-            marginBottom: 20,
-          }}
-        >
           {/* Tokenized Agricultural Assets */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
@@ -742,10 +748,11 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE }}
             style={{
               ...cardStyle,
-              background: "#edf7e4",
+              background: cardGreen,
               padding: "28px 28px 0",
               display: "flex",
               flexDirection: "column",
+              height: "346px",
             }}
           >
             <p
@@ -775,12 +782,11 @@ export default function FeaturesSection() {
                 background: "#fff",
                 borderRadius: "12px 12px 12px 12px",
                 border: "1px solid rgba(0,0,0,0.07)",
-                borderBottom: "none",
                 overflow: "hidden",
                 fontFamily: "monospace",
                 fontSize: 11,
                 position: "relative" as const,
-                height: 280,
+                height: 220,
               }}
             >
               {/* Header */}
@@ -789,7 +795,7 @@ export default function FeaturesSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "space-between",
-                  padding: "10px 16px",
+                  padding: "10px 20px",
                   borderBottom: "1px solid rgba(0,0,0,0.06)",
                   background: "#fafafa",
                 }}
@@ -904,7 +910,8 @@ export default function FeaturesSection() {
             transition={{ duration: 0.6, ease: EASE, delay: 0.1 }}
             style={{
               ...cardStyle,
-              background: "#edf7e4",
+              background:
+                "linear-gradient(180deg, rgba(230,242,216,0.5) 0%, rgba(255,255,255,0.5) 100%)",
               padding: 28,
               display: "flex",
               flexDirection: "column",
@@ -940,10 +947,10 @@ export default function FeaturesSection() {
                 borderRadius: 12,
                 border: "1px solid rgba(0,0,0,0.05)",
                 padding: "18px",
-                minHeight: 200,
+                minHeight: 150,
                 display: "flex",
                 flexDirection: "column",
-                gap: 14,
+                gap: 6,
               }}
             >
               {/* Typing indicator — light-green banner with rotation jitter */}
@@ -1076,7 +1083,7 @@ export default function FeaturesSection() {
                       delay: cfg.delay,
                     }}
                     style={{
-                      height: 56,
+                      height: 32,
                       borderRadius: 10,
                       background: "#f0f8e6",
                       display: "flex",
