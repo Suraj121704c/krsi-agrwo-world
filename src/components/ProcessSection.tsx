@@ -155,6 +155,7 @@ export default function ProcessSection() {
               style={{
                 background: 'linear-gradient(180deg, rgba(237,237,237,0.5) 0%, rgba(255,255,255,0.5) 100%)',
                 boxShadow: 'inset 0 0 1px 1px rgba(255,255,255,0.9)',
+                border: '1px solid rgba(0,0,0,0.06)',
                 backdropFilter: 'blur(6px)',
                 WebkitBackdropFilter: 'blur(6px)',
                 borderRadius: 16,

@@ -235,15 +235,12 @@ export default function CtaSection() {
             <a
               href="mailto:hello@krsiagrotech.com"
               style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: 10,
+                display: "inline-block",
                 borderRadius: 100,
-                padding: 6,
+                padding: 5,
+                background: "#fff",
                 boxShadow:
-                  "0 0 1px 1px white, 0 2px 4px rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.28)",
-                background:
-                  "linear-gradient(-43.56deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)",
+                  "0 8px 20px rgba(97,148,12,0.22), 0 1px 2px rgba(0,0,0,0.08)",
                 textDecoration: "none",
               }}
             >
@@ -253,29 +250,21 @@ export default function CtaSection() {
                   alignItems: "center",
                   gap: 10,
                   borderRadius: 100,
-                  padding: "10px 24px",
+                  padding: "11px 26px",
                   fontSize: 15,
                   fontWeight: 600,
                   color: "#fff",
-                  borderBottom: "1.25px solid rgba(255,255,255,0.42)",
+                  background:
+                    "linear-gradient(-43.56deg, rgb(159,206,106) 0%, rgb(97,175,28) 100%)",
                 }}
               >
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                  <circle
-                    cx="8"
-                    cy="8"
-                    r="7"
-                    stroke="rgba(255,255,255,0.6)"
-                    strokeWidth="1.2"
-                  />
-                  <path
-                    d="M6 8h4M8.5 6l2 2-2 2"
-                    stroke="white"
-                    strokeWidth="1.4"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                <img
+                  src="/images/callNow.png"
+                  alt=""
+                  width={18}
+                  height={18}
+                  style={{ display: "block" }}
+                />
                 Book A Free Call Now
               </span>
             </a>

@@ -142,11 +142,10 @@ export default function HeroSection() {
             style={{
               display: "inline-block",
               borderRadius: 100,
-              padding: 6,
+              padding: 5,
+              background: "#fff",
               boxShadow:
-                "0 0 1px 1px white, 0 2px 4px rgba(0,0,0,0.22), 0 0 0 1px rgba(0,0,0,0.32)",
-              background:
-                "linear-gradient(-43.56deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)",
+                "0 8px 20px rgba(97,148,12,0.22), 0 1px 2px rgba(0,0,0,0.08)",
               textDecoration: "none",
             }}
           >
@@ -156,28 +155,21 @@ export default function HeroSection() {
                 alignItems: "center",
                 gap: 10,
                 borderRadius: 100,
-                padding: "11px 24px",
+                padding: "12px 26px",
                 fontSize: 16,
                 fontWeight: 600,
                 color: "#fff",
-                borderBottom: "1.25px solid rgba(255,255,255,0.42)",
+                background:
+                  "linear-gradient(-43.56deg, rgb(159,206,106) 0%, rgb(97,175,28) 100%)",
               }}
             >
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <circle
-                  cx="9"
-                  cy="6"
-                  r="2.9"
-                  stroke="white"
-                  strokeWidth="1.5"
-                />
-                <path
-                  d="M3.6 15c0-2.6 2.4-4.2 5.4-4.2s5.4 1.6 5.4 4.2"
-                  stroke="white"
-                  strokeWidth="1.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+              <Image
+                src="/images/callNow.png"
+                alt=""
+                width={18}
+                height={18}
+                style={{ display: "block" }}
+              />
               Book A Free Call Now
             </span>
           </a>
