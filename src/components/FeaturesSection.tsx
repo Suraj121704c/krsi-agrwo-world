@@ -507,6 +507,8 @@ export default function FeaturesSection() {
                 position: "relative",
                 height: 270,
                 overflow: "hidden",
+                clipPath: "inset(0 round 4px)",
+                transform: "translateZ(0)",
               }}
             >
               <div
@@ -538,7 +540,10 @@ export default function FeaturesSection() {
 
               {/* Orbit ring — lines + nodes sway gently around the pill center */}
               {/* Ring is 380×380, center pivots at (190,190); placed so that
-                  pivot lands at container `bottom: 35` (= pill center). */}
+                  pivot lands at container `bottom: 35` (= pill center).
+                  NOTE: `.animate-orbit-sway` (globals.css) also applies a constant
+                  scale(0.72) about that center, shrinking the nodes + wires so the
+                  whole graph stays inside the green dome. */}
               <div
                 className="animate-orbit-sway"
                 style={{
@@ -567,7 +572,7 @@ export default function FeaturesSection() {
                   {/* Endpoints sit 35px short of each node center (= node radius)
                       so wires terminate at the circle edge, not inside it. */}
                   <path
-                    d="M 190 190 Q 95 170 40 150"
+                    d="M 190 190 Q 76 165 20 145"
                     stroke="rgba(39,60,29,0.28)"
                     strokeWidth="1.6"
                     fill="none"
@@ -585,7 +590,7 @@ export default function FeaturesSection() {
                     fill="none"
                   />
                   <path
-                    d="M 190 190 Q 285 170 340 150"
+                    d="M 190 190 Q 304 165 359 145"
                     stroke="rgba(39,60,29,0.28)"
                     strokeWidth="1.6"
                     fill="none"
@@ -594,8 +599,8 @@ export default function FeaturesSection() {
 
                 {[
                   {
-                    top: 106,
-                    left: -29,
+                    top: 101,
+                    left: -48,
                     delay: 0,
                     icon: (
                       /* Thermometer — temperature monitoring */
@@ -670,8 +675,8 @@ export default function FeaturesSection() {
                     ),
                   },
                   {
-                    top: 106,
-                    left: 338,
+                    top: 101,
+                    left: 357,
                     delay: 1.95,
                     icon: (
                       /* Bell — real-time alerts */
