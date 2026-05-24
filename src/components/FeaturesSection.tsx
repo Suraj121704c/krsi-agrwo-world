@@ -237,14 +237,14 @@ export default function FeaturesSection() {
             style={{
               fontSize: 15,
               fontFamily: "var(--font-inter), Inter, sans-serif",
-              color: "rgba(39,60,29,0.5)",
-              maxWidth: 480,
+              color: "#1c1629",
+              maxWidth: 560,
               margin: "16px auto 0",
               lineHeight: 1.65,
             }}
           >
-            Powerful infrastructure for commodity storage, financing,
-            monitoring, and global agricultural trade.
+            Powerful Infrastructure For Commodity Storage, Financing,
+            Monitoring, And Global Agricultural Trade.
           </p>
         </motion.div>
 

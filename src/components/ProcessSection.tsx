@@ -174,15 +174,16 @@ export default function ProcessSection() {
             style={{
               fontSize: 15,
               fontFamily: "var(--font-inter), Inter, sans-serif",
-              color: "rgba(39,60,29,0.5)",
+              color: "#1c1629",
               marginTop: 16,
-              maxWidth: 460,
+              maxWidth: 740,
               margin: "16px auto 0",
               lineHeight: 1.65,
             }}
           >
-            Our streamlined three-step process connects warehouse operators,
-            financiers, and global traders in one unified platform.
+            AI Driven Agriculture Finance Infrastructure Helping Farmers And
+            Agriculture Businesses Grow Faster, Trade Smarter, And Unlock
+            Measurable Value.
           </p>
         </motion.div>
 
