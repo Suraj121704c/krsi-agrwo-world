@@ -7,36 +7,44 @@ const EASE = [0.22, 1, 0.36, 1] as [number, number, number, number];
 
 const FAQS = [
   {
-    q: 'What is included in the Starter plan?',
-    a: 'The Starter plan includes up to 5 warehouse listings, 100 trades per month, access to the basic finance marketplace, standard quality reports, and email support — all completely free.',
+    q: 'What is Krsi?',
+    a: 'Krsi is a blockchain-powered agri marketplace connecting farmers, buyers, warehouses, and financial institutions.',
   },
   {
-    q: 'Can I switch plans later?',
-    a: 'Yes. You can upgrade or downgrade at any time. Changes take effect at the start of your next billing cycle with prorated adjustments for any unused time.',
+    q: 'How does Krsi help farmers?',
+    a: 'Krsi helps farmers store produce, access loans, avoid distress sales, and sell at better prices.',
   },
   {
-    q: 'How secure is my data?',
-    a: 'We use AES-256 encryption for all data at rest and TLS 1.3 in transit. Our infrastructure is SOC 2 Type II certified with a 99.9% uptime SLA and daily encrypted backups.',
+    q: 'What is a digital warehouse receipt?',
+    a: 'A digital proof of stored commodities containing quantity, quality, and ownership details.',
   },
   {
-    q: 'Can I integrate with other tools?',
-    a: 'Yes. KRSI Agrotech offers a full REST API and webhook support for integration with ERP systems, accounting software, logistics platforms, and commodity exchanges.',
+    q: 'How does financing work on Krsi?',
+    a: 'Farmers can use warehouse receipts as collateral to get loans from partner institutions.',
   },
   {
-    q: 'Do you offer a free trial?',
-    a: 'Yes — all paid plans come with a 14-day free trial, no credit card required. You get full access to every feature during the trial period.',
+    q: 'Which commodities does Krsi support?',
+    a: 'Krsi supports coffee, grains, pulses, spices, oil seeds, and other agri commodities.',
   },
   {
-    q: 'What payment methods are accepted?',
-    a: 'We accept all major credit and debit cards, UPI, NEFT/RTGS bank transfers, and invoice billing. Enterprise clients can set up custom payment terms.',
+    q: 'How does Krsi ensure transparency?',
+    a: 'Krsi uses blockchain and verified warehouse systems for secure and transparent transactions.',
   },
   {
-    q: 'How does the 2% donation work?',
-    a: '2% of every transaction fee goes directly to the KRSI Farmer Foundation, which provides subsidized inputs, training programs, and crop insurance support to smallholder farmers.',
+    q: 'Can buyers purchase directly on Krsi?',
+    a: 'Yes. Buyers and traders can discover and purchase verified commodities directly.',
   },
   {
-    q: 'What makes your platform different?',
-    a: 'KRSI is the only platform that combines warehouse receipts, agri finance, and commodity trading in a single regulated infrastructure layer — purpose-built for the global agriculture sector.',
+    q: 'Why does Krsi use blockchain?',
+    a: 'Blockchain enables secure records, transparent ownership, and faster settlements.',
+  },
+  {
+    q: 'Who can use Krsi?',
+    a: 'Farmers, FPOs, warehouses, traders, buyers, and financial institutions can all use Krsi.',
+  },
+  {
+    q: 'How can I join Krsi?',
+    a: 'Contact the Krsi team through our website to get started or explore partnership opportunities.',
   },
 ];
 
@@ -124,8 +132,8 @@ function FaqItem({ faq, index }: { faq: { q: string; a: string }; index: number 
 }
 
 export default function FaqSection() {
-  const col1 = FAQS.slice(0, 4);
-  const col2 = FAQS.slice(4);
+  const col1 = FAQS.slice(0, 5);
+  const col2 = FAQS.slice(5);
 
   return (
     <section
@@ -163,7 +171,7 @@ export default function FaqSection() {
               letterSpacing: '-1.2px',
             }}
           >
-            Questions answered
+            Frequently Asked Questions
           </motion.h2>
 
           <motion.p

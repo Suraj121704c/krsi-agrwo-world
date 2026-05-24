@@ -78,6 +78,7 @@ export default function CtaSection() {
                   width: 460,
                   height: "auto",
                   opacity: 0.9,
+                  mixBlendMode: "screen",
                   filter:
                     "brightness(1.5) contrast(0.7) sepia(0.5) hue-rotate(55deg)",
                   x: cube1X,
@@ -107,6 +108,7 @@ export default function CtaSection() {
                 width: 360,
                 height: "auto",
                 opacity: 0.65,
+                mixBlendMode: "screen",
                 filter:
                   "brightness(1.5) contrast(0.7) sepia(0.5) hue-rotate(55deg)",
                 x: cube2X,

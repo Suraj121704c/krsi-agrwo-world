@@ -88,7 +88,7 @@ export default function HeroSection() {
               fontSize: 11,
               fontWeight: 600,
               letterSpacing: "0.08em",
-              color: "#273c1d",
+              color: "#1c1629",
               textTransform: "uppercase" as const,
             }}
           >
@@ -179,7 +179,7 @@ export default function HeroSection() {
             style={{
               fontSize: 11,
               fontWeight: 600,
-              color: "rgba(28,22,41,0.55)",
+              color: "#000000",
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               marginBottom: 20,
