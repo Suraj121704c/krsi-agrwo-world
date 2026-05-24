@@ -233,7 +233,7 @@ export default function ProcessSection() {
                   display: "flex",
                   alignItems: "center",
                   justifyContent: "center",
-                  fontSize: 12,
+                  fontSize: 16,
                   fontWeight: 600,
                   color: "#273c1d",
                   lineHeight: 1,
@@ -263,20 +263,20 @@ export default function ProcessSection() {
 
               <h3
                 style={{
-                  fontSize: "16px",
+                  fontSize: "28px",
                   fontFamily: "'Satoshi', sans-serif",
-                  fontWeight: 700,
+                  fontWeight: 500,
                   color: "#1c1629",
-                  margin: "0 0 10px",
+                  margin: "0 0 12px",
                 }}
               >
                 {step.title}
               </h3>
               <p
                 style={{
-                  fontSize: "14px",
+                  fontSize: "16px",
                   color: "#273C1D",
-                  lineHeight: 1.65,
+                  lineHeight: 1.6,
                   margin: "0 0 24px",
                 }}
               >
@@ -294,7 +294,7 @@ export default function ProcessSection() {
                     "linear-gradient(180deg, rgba(246,241,252,0.65) 0%, rgba(255,255,255,0.65) 100%)",
                   boxShadow:
                     "inset 0 0 1px 1px rgba(255,255,255,0.9), 0 1px 2px rgba(0,0,0,0.03)",
-                  fontSize: 12,
+                  fontSize: 15,
                   fontWeight: 600,
                   color: "#273c1d",
                 }}
