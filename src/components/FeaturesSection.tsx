@@ -205,7 +205,7 @@ export default function FeaturesSection() {
               style={{
                 flex: 1,
                 maxWidth: 220,
-                height: 2,
+                height: 3,
                 background:
                   "linear-gradient(90deg, rgba(101,148,12,0) 0%, rgba(101,148,12,0.22) 100%)",
               }}
@@ -226,7 +226,7 @@ export default function FeaturesSection() {
               style={{
                 flex: 1,
                 maxWidth: 220,
-                height: 2,
+                height: 3,
                 background:
                   "linear-gradient(90deg, rgba(101,148,12,0.22) 0%, rgba(101,148,12,0) 100%)",
               }}

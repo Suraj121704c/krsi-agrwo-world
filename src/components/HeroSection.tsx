@@ -129,12 +129,14 @@ export default function HeroSection() {
             fontWeight: 500,
             color: "rgba(28,22,41,0.5)",
             lineHeight: 1.7,
-            maxWidth: 520,
+            maxWidth: 760,
             margin: "0 0 44px",
           }}
         >
-          Empowering farmers globally with transparent commodity trading,
-          flexible agri finance, and secure warehouse management solutions.
+          Empowering farmers globally with smarter storage, financing, and
+          market access through
+          <br />
+          one trusted agri-finance platform.
         </p>
         <div>
           <a

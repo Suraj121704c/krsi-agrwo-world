@@ -142,7 +142,7 @@ export default function ProcessSection() {
               style={{
                 flex: 1,
                 maxWidth: 220,
-                height: 2,
+                height: 3,
                 background:
                   "linear-gradient(90deg, rgba(101,148,12,0) 0%, rgba(101,148,12,0.22) 100%)",
               }}
@@ -163,7 +163,7 @@ export default function ProcessSection() {
               style={{
                 flex: 1,
                 maxWidth: 220,
-                height: 2,
+                height: 3,
                 background:
                   "linear-gradient(90deg, rgba(101,148,12,0.22) 0%, rgba(101,148,12,0) 100%)",
               }}
@@ -214,7 +214,8 @@ export default function ProcessSection() {
                 position: "relative",
                 display: "flex",
                 flexDirection: "column",
-                minHeight: 320,
+                minHeight: "340px",
+                width: "350px",
               }}
             >
               {/* Number badge — top right */}
@@ -336,7 +337,7 @@ export default function ProcessSection() {
               >
                 <p
                   style={{
-                    fontSize: "clamp(28px, 3.2vw, 38px)",
+                    fontSize: "clamp(34px, 4vw, 44px)",
                     fontFamily: "'Satoshi', sans-serif",
                     fontWeight: 700,
                     color: "#65940c",
@@ -349,7 +350,7 @@ export default function ProcessSection() {
                 </p>
                 <p
                   style={{
-                    fontSize: 13,
+                    fontSize: 16,
                     color: "#273c1d",
                     margin: 0,
                     fontWeight: 500,
