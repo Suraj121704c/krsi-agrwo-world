@@ -100,11 +100,11 @@ html, body {
    so the whole node-graph nests inside the green dome; rotate is the gentle sway.
    Both pivot at the ring center via transform-origin set on the element. */
 @keyframes orbit-sway {
-  0%, 100% { transform: rotate(-4deg) scale(0.78); }
-  50%      { transform: rotate(4deg)  scale(0.78); }
+  0%, 100% { transform: rotate(-12deg) scale(0.78); }
+  50%      { transform: rotate(12deg)  scale(0.78); }
 }
 .animate-orbit-sway {
-  animation: orbit-sway 6s ease-in-out infinite;
+  animation: orbit-sway 4.5s ease-in-out infinite;
   will-change: transform;
 }
 
