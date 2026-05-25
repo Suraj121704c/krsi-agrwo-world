@@ -410,8 +410,8 @@ export default function FeaturesSection() {
                     background: "#fff",
                     borderRadius: 14,
                     padding: "22px 22px 26px",
-                    boxShadow:
-                      "0 0.8px 0.8px -1px rgba(0,0,0,0.04), 0 2.4px 2.4px -2px rgba(0,0,0,0.04), 0 6.4px 6.4px -3px rgba(0,0,0,0.03), 0 20px 20px -4px rgba(0,0,0,0.01), inset 0 0 1px 1px rgba(255,255,255,0.7)",
+                    border: "1px solid rgba(0,0,0,0.05)",
+                    boxShadow: "0 2px 8px rgba(16,24,40,0.04)",
                   }}
                 >
                   <div
@@ -445,7 +445,7 @@ export default function FeaturesSection() {
                   <p
                     style={{
                       fontSize: 13,
-                      color: "rgba(39,60,29,0.55)",
+                      color: "#1c1629",
                       margin: 0,
                       lineHeight: 1.55,
                     }}
@@ -485,7 +485,7 @@ export default function FeaturesSection() {
             <p
               style={{
                 fontSize: 13,
-                color: "rgba(39,60,29,0.6)",
+                color: "#1c1629",
                 margin: "0 0 28px",
                 lineHeight: 1.55,
               }}
@@ -774,7 +774,7 @@ export default function FeaturesSection() {
             <p
               style={{
                 fontSize: 13,
-                color: "rgba(39,60,29,0.6)",
+                color: "#1c1629",
                 margin: "0 0 24px",
                 lineHeight: 1.55,
               }}
@@ -896,7 +896,7 @@ export default function FeaturesSection() {
                       </span>
                       <span
                         style={{
-                          color: "rgba(39,60,29,0.65)",
+                          color: "#1c1629",
                           whiteSpace: "pre" as const,
                         }}
                       >
@@ -936,7 +936,7 @@ export default function FeaturesSection() {
             <p
               style={{
                 fontSize: 13,
-                color: "rgba(39,60,29,0.6)",
+                color: "#1c1629",
                 margin: "0 0 24px",
                 lineHeight: 1.55,
               }}

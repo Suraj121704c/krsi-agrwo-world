@@ -133,7 +133,7 @@ export default function CommunitySection() {
               style={{
                 fontSize: 14,
                 fontFamily: "var(--font-inter), Inter, sans-serif",
-                color: "rgba(39,60,29,0.55)",
+                color: "#1c1629",
                 lineHeight: 1.65,
                 margin: 0,
               }}
@@ -209,7 +209,9 @@ export default function CommunitySection() {
               style={{
                 background:
                   "linear-gradient(180deg, rgba(237,237,237,0.45) 0%, rgba(255,255,255,0.45) 100%)",
-                boxShadow: "inset 0 0 1px 1px rgba(255,255,255,0.9)",
+                boxShadow:
+                  "0 2px 8px rgba(16,24,40,0.04), inset 0 0 1px 1px rgba(255,255,255,0.9)",
+                border: "1px solid rgba(0,0,0,0.06)",
                 borderRadius: 16,
                 padding: "24px 24px 20px",
                 position: "relative",
@@ -283,7 +285,7 @@ export default function CommunitySection() {
               <p
                 style={{
                   fontSize: 13,
-                  color: "rgba(39,60,29,0.6)",
+                  color: "#1c1629",
                   lineHeight: 1.6,
                   margin: "0 0 16px",
                   paddingRight: 32,
@@ -326,7 +328,7 @@ export default function CommunitySection() {
             style={{
               fontSize: 13,
               fontWeight: 600,
-              color: "rgba(39,60,29,0.5)",
+              color: "#1c1629",
             }}
           >
             Socials :

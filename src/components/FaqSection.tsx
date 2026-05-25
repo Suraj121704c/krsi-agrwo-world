@@ -51,12 +51,14 @@ const FAQS = [
 function FaqItem({
   faq,
   index,
+  isOpen,
+  onToggle,
 }: {
   faq: { q: string; a: string };
   index: number;
+  isOpen: boolean;
+  onToggle: () => void;
 }) {
-  const [open, setOpen] = useState(false);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: 18 }}
@@ -74,7 +76,7 @@ function FaqItem({
       }}
     >
       <button
-        onClick={() => setOpen(!open)}
+        onClick={onToggle}
         style={{
           width: "100%",
           display: "flex",
@@ -105,12 +107,12 @@ function FaqItem({
           viewBox="0 0 18 18"
           fill="none"
           style={{ flexShrink: 0 }}
-          animate={{ rotate: open ? 45 : 0 }}
+          animate={{ rotate: isOpen ? 45 : 0 }}
           transition={{ duration: 0.2 }}
         >
           <path
             d="M9 3v12M3 9h12"
-            stroke={open ? "#65940c" : "rgba(39,60,29,0.4)"}
+            stroke={isOpen ? "#65940c" : "rgba(39,60,29,0.4)"}
             strokeWidth="1.6"
             strokeLinecap="round"
           />
@@ -118,7 +120,7 @@ function FaqItem({
       </button>
 
       <AnimatePresence initial={false}>
-        {open && (
+        {isOpen && (
           <motion.div
             key="answer"
             initial={{ height: 0 }}
@@ -131,7 +133,7 @@ function FaqItem({
               style={{
                 fontSize: 13,
                 fontFamily: "var(--font-inter), Inter, sans-serif",
-                color: "rgba(39,60,29,0.62)",
+                color: "#1c1629",
                 lineHeight: 1.7,
                 padding: "0 20px 18px",
                 margin: 0,
@@ -149,6 +151,9 @@ function FaqItem({
 export default function FaqSection() {
   const col1 = FAQS.slice(0, 5);
   const col2 = FAQS.slice(5);
+  const [openQuestion, setOpenQuestion] = useState<string | null>(null);
+  const toggle = (q: string) =>
+    setOpenQuestion((cur) => (cur === q ? null : q));
 
   return (
     <section
@@ -244,7 +249,7 @@ export default function FaqSection() {
             transition={{ duration: 0.6, ease: EASE }}
             style={{
               fontSize: 14,
-              color: "rgba(39,60,29,0.72)",
+              color: "#1c1629",
               margin: 0,
               maxWidth: 380,
               lineHeight: 1.6,
@@ -262,21 +267,38 @@ export default function FaqSection() {
             viewport={{ once: true }}
             transition={{ duration: 0.6, ease: EASE }}
             style={{
-              display: "inline-flex",
-              alignItems: "center",
+              display: "inline-block",
               borderRadius: 100,
-              padding: "10px 24px",
-              background:
-                "linear-gradient(-43deg, rgb(200,212,195) 0%, rgb(97,175,28) 100%)",
-              color: "#fff",
-              fontSize: 14,
-              fontWeight: 600,
-              textDecoration: "none",
+              padding: 5,
+              background: "#fff",
               boxShadow:
-                "0 4px 14px rgba(97,175,28,0.25), 0 0 0 5px rgba(255,255,255,0.9), 0 0 0 6px rgba(101,148,12,0.12)",
+                "0 8px 20px rgba(97,148,12,0.22), 0 1px 2px rgba(0,0,0,0.08)",
+              textDecoration: "none",
             }}
           >
-            Contact Sales Now
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: 10,
+                borderRadius: 100,
+                padding: "11px 24px",
+                fontSize: 14,
+                fontWeight: 600,
+                color: "#fff",
+                background:
+                  "linear-gradient(-43.56deg, rgb(159,206,106) 0%, rgb(97,175,28) 100%)",
+              }}
+            >
+              <img
+                src="/images/callNow.png"
+                alt=""
+                width={16}
+                height={16}
+                style={{ display: "block" }}
+              />
+              Book a Call
+            </span>
           </motion.a>
         </div>
 
@@ -290,12 +312,24 @@ export default function FaqSection() {
         >
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {col1.map((faq, i) => (
-              <FaqItem key={faq.q} faq={faq} index={i} />
+              <FaqItem
+                key={faq.q}
+                faq={faq}
+                index={i}
+                isOpen={openQuestion === faq.q}
+                onToggle={() => toggle(faq.q)}
+              />
             ))}
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {col2.map((faq, i) => (
-              <FaqItem key={faq.q} faq={faq} index={i + 4} />
+              <FaqItem
+                key={faq.q}
+                faq={faq}
+                index={i + 4}
+                isOpen={openQuestion === faq.q}
+                onToggle={() => toggle(faq.q)}
+              />
             ))}
           </div>
         </div>
@@ -320,7 +354,7 @@ export default function FaqSection() {
                 "linear-gradient(180deg, rgba(246,241,252,0.5) 0%, rgba(255,255,255,0.5) 100%)",
               boxShadow: "inset 0 0 1px 1px rgba(255,255,255,0.85)",
               fontSize: 13,
-              color: "#273c1d",
+              color: "#1c1629",
               textDecoration: "none",
               fontWeight: 500,
             }}

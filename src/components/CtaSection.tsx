@@ -138,8 +138,8 @@ export default function CtaSection() {
               style={{
                 fontSize: 15,
                 fontFamily: "var(--font-inter), Inter, sans-serif",
-                color: "rgba(39,60,29,0.6)",
-                maxWidth: 440,
+                color: "#1c1629",
+                maxWidth: 520,
                 margin: "0 auto 32px",
                 lineHeight: 1.65,
               }}
@@ -170,7 +170,7 @@ export default function CtaSection() {
                   border: "1px solid rgba(101,148,12,0.15)",
                   fontSize: 13,
                   fontWeight: 600,
-                  color: "#273c1d",
+                  color: "#1c1629",
                 }}
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -205,7 +205,7 @@ export default function CtaSection() {
                   border: "1px solid rgba(101,148,12,0.15)",
                   fontSize: 13,
                   fontWeight: 600,
-                  color: "#273c1d",
+                  color: "#1c1629",
                 }}
               >
                 <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -252,8 +252,8 @@ export default function CtaSection() {
                   alignItems: "center",
                   gap: 10,
                   borderRadius: 100,
-                  padding: "11px 26px",
-                  fontSize: 15,
+                  padding: "12px 26px",
+                  fontSize: 16,
                   fontWeight: 600,
                   color: "#fff",
                   background:

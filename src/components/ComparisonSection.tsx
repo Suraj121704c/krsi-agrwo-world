@@ -129,7 +129,7 @@ export default function ComparisonSection() {
             style={{
               fontSize: 15,
               fontFamily: "var(--font-inter), Inter, sans-serif",
-              color: "rgba(39,60,29,0.5)",
+              color: "#1c1629",
               maxWidth: 500,
               margin: "16px auto 0",
               lineHeight: 1.65,
@@ -191,7 +191,7 @@ export default function ComparisonSection() {
 
             <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
               {US_ITEMS.map((item) => (
-                <div key={item} style={{ ...rowStyle, color: "#273c1d" }}>
+                <div key={item} style={{ ...rowStyle, color: "#1c1629" }}>
                   <svg
                     width="16"
                     height="16"
@@ -268,7 +268,7 @@ export default function ComparisonSection() {
               {OTHERS_ITEMS.map((item) => (
                 <div
                   key={item}
-                  style={{ ...rowStyle, color: "rgba(39,60,29,0.55)" }}
+                  style={{ ...rowStyle, color: "#1c1629" }}
                 >
                   <svg
                     width="16"
